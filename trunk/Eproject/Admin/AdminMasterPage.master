@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="Admin_AdminMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EProject - Excell On Service</title>
+<script type="text/javascript" src="files/jquery-latest.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("ul.subnav").parent().append("<span></span>"); //Only shows drop down trigger when js is enabled - Adds empty span tag after ul.subnav
+
+        $("ul.topnav li span").click(function () { //When trigger is clicked...
+
+            //Following events are applied to the subnav itself (moving subnav up and down)
+            $(this).parent().find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click
+
+            $(this).parent().hover(function () {
+            }, function () {
+                $(this).parent().find("ul.subnav").slideUp('slow'); //When the mouse hovers out of the subnav, move it back up
+            });
+
+            //Following events are applied to the trigger (Hover events for the trigger)
+        }).hover(function () {
+            $(this).addClass("subhover"); //On hover over, add class "subhover"
+        }, function () {	//On Hover Out
+            $(this).removeClass("subhover"); //On hover out, remove class "subhover"
+        });
+
+    });
+</script>
+<link rel="stylesheet" href="files/templates.css" type="text/css">
+
+</head>
+
+<body>
+<div class="container">
+    <div id="header">
+    <div style="float: right; padding: 5px 10px 0px 0px;"><a href="#" target="_blank" title="View and update profile">Profile</a> | <a href="http://localhost:1108/eproject/" target="_blank" title="View my web">View my web</a> | <a href="#">Logout</a></div>
+    </div>
+    <div>
+        <ul class="topnav">
+            <li><a href="Default.aspx">Home</a></li>
+            <li><a href="Employee.aspx">Employee</a>
+                <ul class="subnav">
+                <li><a href="Add-Emp.aspx">Add new Employee</a></li>
+                <li><a href="#">View and Search Employee</a>
+                </ul>
+            </li>
+            <li><a href="Department.aspx">Department</a>
+            <ul class="subnav">
+                <li><a href="Add-Dep.aspx">Add new Department</a></li>
+                <li><a href="#">View and Search Department</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Services Type</a>            
+            <ul class="subnav"><li><a href=#>Add new Service Type</a></li></ul>
+            </li>
+            <li><a href="#">Services Order</a>            
+            <ul class="subnav"><li><a href=#>Add new Service Order</a></li></ul>
+            </li>
+            <li><a href="Product.aspx">Product</a>
+            <ul class="subnav">
+                    <li><a href="Add-Pro.aspx">Add new product</a></li>
+                    <li><a href="#">View and Search product</a></li>                    
+            </ul>
+            </li>
+            <li><a href="#">Search</a>
+            <ul class="subnav">
+                    <li style="list-style: none"><form action="" method="post">
+            <input style=" height: 25px; margin: 0 auto; border: #CCC 1px solid; padding: 2px 2px 2px 5px; width: 160px; color: #6E6E6E" type="text" value="Quick Search" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}">
+            <input type="submit" value="Go" style="cursor: pointer;">
+            </form></li>
+                    <li><a href="Adv-Search.aspx">Advanced Search</a></li>
+            </ul>
+            </li>
+        </ul>
+    </div>
+</head>
+<body>
+	<div id="content">
+	<div style="padding: 10px">
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+	</div>
+	</div>
+</body>
+	<div id="footer">
+	Copyright © 2012 Excell On Service
+	</div>
+</div>
+</html>
