@@ -51,3 +51,7 @@ values ()
 
 insert into serviceorderdetail (empid,name,customer,servicetype,begindate,enddate,complete,description) 
 values ()
+
+
+
+insert into statuspayment (serviceorderid,status,date,description) values ()
