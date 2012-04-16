@@ -8,9 +8,9 @@ namespace WebApplication1.Entities
     public class ServiceOrderDetail
     {
         String id;
-        String serviceorderld;
-        String empld;
-        String taskname;
+        String serviceOrderId;
+        String empId;
+        String taskName;
         String description;
 
         public String Description
@@ -19,22 +19,22 @@ namespace WebApplication1.Entities
             set { description = value; }
         }
 
-        public String Taskname
+        public String TaskName
         {
-            get { return taskname; }
-            set { taskname = value; }
+            get { return taskName; }
+            set { taskName = value; }
         }
 
-        public String Empld
+        public String EmpId
         {
-            get { return empld; }
-            set { empld = value; }
+            get { return empId; }
+            set { empId = value; }
         }
 
-        public String Serviceorderld
+        public String ServiceOrderId
         {
-            get { return serviceorderld; }
-            set { serviceorderld = value; }
+            get { return serviceOrderId; }
+            set { serviceOrderId = value; }
         }
 
         public String Id

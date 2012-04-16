@@ -15,15 +15,13 @@ namespace WebApplication1.Entities
         {
             get { return id; }
             set { id = value; }
-        }
-        
+        }        
 
         public String Name
         {
             get { return name; }
             set { name = value; }
-        }
-        
+        }        
 
         public String Description
         {

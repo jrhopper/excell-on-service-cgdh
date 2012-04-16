@@ -9,10 +9,14 @@ namespace WebApplication1.Entities
     {
         String id;
         String name;
+		String link;
         String description;
        
-
-        
+		public String Link
+        {
+            get { return link; }
+            set { link = value; }
+        }            
 
         public String Id
         {

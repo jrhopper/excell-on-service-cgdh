@@ -8,7 +8,7 @@ namespace WebApplication1.Entities
     public class StausPayment
     {
         String id;
-        String serviceorderld;
+        String serviceOrderId;
         String status;
         String date;
         String description;
@@ -31,10 +31,10 @@ namespace WebApplication1.Entities
             set { status = value; }
         }
 
-        public String Serviceorderld
+        public String ServiceOrderId
         {
-            get { return serviceorderld; }
-            set { serviceorderld = value; }
+            get { return serviceOrderId; }
+            set { serviceOrderId = value; }
         }
 
         public String Id

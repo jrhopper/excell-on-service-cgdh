@@ -9,37 +9,34 @@ namespace WebApplication1.Entities
     {
         String id;
         String name;
+		String image;
         String charges;
         String description;
 
+		public String Image
+        {
+            get { return image; }
+            set { image = value; }
+        }
+		
         public String Id
         {
             get { return id; }
             set { id = value; }
-        }
-        
+        }        
 
         public String Name
         {
             get { return name; }
             set { name = value; }
         }
-        String image;
-
-        public String Image
-        {
-            get { return image; }
-            set { image = value; }
-        }
-        
-
+       
         public String Charges
         {
             get { return charges; }
             set { charges = value; }
         }
         
-
         public String Description
         {
             get { return description; }

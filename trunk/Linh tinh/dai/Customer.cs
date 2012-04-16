@@ -56,7 +56,5 @@ namespace WebApplication1.Entities
             get { return id; }
             set { id = value; }
         }
-        
-
-    }
+	}
 }
