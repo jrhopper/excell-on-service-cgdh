@@ -41,11 +41,11 @@
     <div style="float: right; padding: 5px 10px 0px 0px;"><a href="#" target="_blank" title="View and update profile">Profile</a> | <a href="http://localhost:1108/eproject/" target="_blank" title="View my web">View my web</a> | <a href="#">Logout</a></div>
     </div>
     <div>
-        <ul class="topnav">
-            <li><a href="Default.aspx">Home</a></li>
+        <ul class="topnav" id="topnav" runat="server">
+            <li><a href="Default.aspxp">Home</a></li>
             <li><a href="Employee.aspx">Employee</a>
                 <ul class="subnav">
-                <li><a href="Add-Emp.aspx">Add new Employee</a></li>
+                <li><a href="Add-Emp.asx">Add new Employee</a></li>
                 <li><a href="#">View and Search Employee</a>
                 </ul>
             </li>
