@@ -5,7 +5,7 @@
 /* Project name:                                                          */
 /* Author:                                                                */
 /* Script type:           Database creation script                        */
-/* Created on:            2012-04-16 16:14                                */
+/* Created on:            2012-04-16 17:18                                */
 /* ---------------------------------------------------------------------- */
 
 
@@ -60,16 +60,16 @@ CREATE TABLE [ServiceType] (
 GO
 
 /* ---------------------------------------------------------------------- */
-/* Add table "SeviceOrderDetail"                                          */
+/* Add table "ServiceOrderDetail"                                         */
 /* ---------------------------------------------------------------------- */
 
-CREATE TABLE [SeviceOrderDetail] (
+CREATE TABLE [ServiceOrderDetail] (
     [Id] INTEGER IDENTITY(0,1) NOT NULL,
     [ServiceOrderId] INTEGER,
     [EmpId] INTEGER,
     [TaskName] NVARCHAR(200),
     [Description] NVARCHAR(200),
-    CONSTRAINT [PK_SeviceOrderDetail] PRIMARY KEY ([Id])
+    CONSTRAINT [PK_ServiceOrderDetail] PRIMARY KEY ([Id])
 )
 GO
 
@@ -200,11 +200,11 @@ ALTER TABLE [Employee] ADD CONSTRAINT [Role_Employee]
     FOREIGN KEY ([RoleId]) REFERENCES [Role] ([Id])
 GO
 
-ALTER TABLE [SeviceOrderDetail] ADD CONSTRAINT [ServiceOrder_SeviceOrderDetail] 
+ALTER TABLE [ServiceOrderDetail] ADD CONSTRAINT [ServiceOrder_ServiceOrderDetail] 
     FOREIGN KEY ([ServiceOrderId]) REFERENCES [ServiceOrder] ([Id])
 GO
 
-ALTER TABLE [SeviceOrderDetail] ADD CONSTRAINT [Employee_SeviceOrderDetail] 
+ALTER TABLE [ServiceOrderDetail] ADD CONSTRAINT [Employee_ServiceOrderDetail] 
     FOREIGN KEY ([EmpId]) REFERENCES [Employee] ([Id])
 GO
 
