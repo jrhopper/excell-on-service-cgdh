@@ -8,9 +8,10 @@ namespace WebApplication1.Entities
     public class Product
     {
         String id;
+		String name;
         String company;
         String price;
-        String customerid;
+        String customerId;
         String description;
 
         public String Description
@@ -18,11 +19,18 @@ namespace WebApplication1.Entities
             get { return description; }
             set { description = value; }
         }
-
-        public String Customerid
+		
+		public String Name
         {
-            get { return customerid; }
-            set { customerid = value; }
+            get { return name; }
+            set { name = value; }
+        }
+
+
+        public String CustomerId
+        {
+            get { return customerId; }
+            set { customerId = value; }
         }
 
         public String Price

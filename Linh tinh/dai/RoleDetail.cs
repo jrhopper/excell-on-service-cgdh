@@ -8,9 +8,9 @@ namespace WebApplication1.Entities
     public class RoleDetail
     {
         String id;
-        String menuld;
-        String Roleld;
-        String actionld;
+        String menuId;
+        String roleId;
+        String actionId;
         String description;
 
         public String Description
@@ -19,25 +19,22 @@ namespace WebApplication1.Entities
             set { description = value; }
         }
 
-        public String Actionld
+        public String ActionId
         {
-            get { return actionld; }
-            set { actionld = value; }
+            get { return actionId; }
+            set { actionId = value; }
         }
 
-public String Roleld1
-{
-  get { return Roleld; }
-  set { Roleld = value; }
-}
-        
+		public String RoleId
+		{
+		  get { return roleId; }
+		  set { roleId = value; }
+		}       
 
-        
-
-        public String Menuld
+        public String MenuId
         {
-            get { return menuld; }
-            set { menuld = value; }
+            get { return menuId; }
+            set { menuId = value; }
         }
 
         public String Id

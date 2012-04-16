@@ -23,7 +23,6 @@ namespace WebApplication1.Entities
             set { name = value; }
         }
 
-
         public String Id
         {
             get { return id; }

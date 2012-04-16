@@ -8,10 +8,10 @@ namespace WebApplication1.Entities
     public class Employee
     {
         String id;
-        String username;
+        String userName;
         String password;
         String department;
-        String roleld;
+        String roleId;
         String name;
         String birthday;
         String sex;
@@ -55,10 +55,10 @@ namespace WebApplication1.Entities
             set { name = value; }
         }
 
-        public String Roleld
+        public String RoleId
         {
-            get { return roleld; }
-            set { roleld = value; }
+            get { return roleId; }
+            set { roleId = value; }
         }
 
         public String Department

@@ -8,14 +8,21 @@ namespace WebApplication1.Entities
     public class ServiceOrder
     {
         String id;
+		String empId;
         String name;
         String customer;
-        String servicetype;
-        String begindate;
-        String enddate;
+        String serviceType;
+        String beginDate;
+        String endDate;
         String complete;
         String description;
 
+		public String EmpId
+        {
+            get { return empId; }
+            set { empId = value; }
+        }
+		
         public String Description
         {
             get { return description; }
@@ -28,22 +35,22 @@ namespace WebApplication1.Entities
             set { complete = value; }
         }
 
-        public String Enddate
+        public String EndDate
         {
-            get { return enddate; }
-            set { enddate = value; }
+            get { return endDate; }
+            set { endDate = value; }
         }
 
-        public String Begindate
+        public String BeginDate
         {
-            get { return begindate; }
-            set { begindate = value; }
+            get { return beginDate; }
+            set { beginDate = value; }
         }
 
-        public String Servicetype
+        public String ServiceType
         {
-            get { return servicetype; }
-            set { servicetype = value; }
+            get { return serviceType; }
+            set { serviceType = value; }
         }
 
         public String Customer
