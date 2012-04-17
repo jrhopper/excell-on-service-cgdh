@@ -45,11 +45,11 @@
     <div class="spoiler-wrap">
     <div class="spoiler-head folded clickable">Login / Logout</div>
     <div class="spoiler-body" style="display: none; ">
-    <form action="" method="post">
+    <form action="" runat=server method="post">
     <table border="0" cellpadding="3px" cellspacing="0px">
-    <tr><td style="padding-top: 5px;">Username: </td>    <td><input type="text" value="Username" class="htg-field" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}" /></td></tr>
-    <tr><td style="padding-top: 5px;">Password: </td>    <td><input type="password" value="" class="htg-field" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}" /></td></tr>
-    <tr><td colspan="2" align="center"><input type="submit" value="Login" title="Login"></td></tr>
+    <tr><td style="padding-top: 5px;">Username: </td>    <td><input id="txtUserName" type="text" value="Username" runat=server class="htg-field" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}" /></td></tr>
+    <tr><td style="padding-top: 5px;">Password: </td>    <td><input id="txtPassword" type="password" value="" runat=server class="htg-field" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}" /></td></tr>
+    <tr><td colspan="2" align="center"><input type="submit" runat=server value="Login" title="Login"></td></tr>
     </table>
     </form>
     </div>
@@ -76,16 +76,16 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
+    
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
-    </form>
+    
 </body>
 
-	<div id="footer"><!--
+	<div id="footer">
 		<ul class="contacts">
 			<h3>Contact Us</h3>
 			<li><span>Email</span><p>: tronggia@gmail.com</p></li>
@@ -101,7 +101,7 @@
 				<input type="password" value="" class="txtfield" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}" />
 				<input type="submit" value="" title="Login" class="button" />
 			</form>
-		</div>-->
+		</div>
 		<div style="text-align: center; font-size: 12px;">Copyright &copy; 2012 Excell-On Service. All rights reserved - <a href="Admin/Default.aspx" title="Admin Control Panel">Admin Control Panel</a>
         <p>Address: Nguyen Chi Thanh st, Ho Chi Minh City</p>
         <p>Hotline: 0934 813161</p>
