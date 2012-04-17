@@ -10,6 +10,7 @@ public partial class Admin_AdminMasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        topnav.InnerHtml = "";
         if (Session["user"] != null)
         {            
             MenuBLL menu = new MenuBLL();
