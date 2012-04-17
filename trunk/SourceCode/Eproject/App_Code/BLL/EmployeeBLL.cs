@@ -13,12 +13,22 @@ public class EmployeeBLL
     {
     }
 
+    /*
+     * Author:La Quoc Chuong 
+     * Purpose:check exists of employee by checking user name and password
+     * Date:2012/04/17
+     */
     public int checkExistsEmployeeByUserNameAndPassword(String user, String pass)
     {
         EmployeeDAL empDal = new EmployeeDAL();
         return empDal.checkExistsEmployeeByUserNamePassword(user, pass);            
     }
 
+    /*
+     * Author:La Quoc Chuong
+     * Purpose:get role id of employee by checking user name
+     * Date:2012/04/17
+     */
     public DataSet getRoleIdOfEmployeeByUserName(String userName)
     {
         EmployeeDAL empDAL = new EmployeeDAL();
@@ -26,6 +36,11 @@ public class EmployeeBLL
         return ds;
     }
 
+    /*
+     * Author:La Quoc Chuong
+     * Purpose: get all employee
+     * Date:2012/04/17 
+     */
     public DataSet getAllEmployee()
     {
         EmployeeDAL empDAL = new EmployeeDAL();
