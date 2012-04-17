@@ -18,7 +18,8 @@ public class MenuDAL:ConfigurationDAL
 
     /*
      *Author:La Quoc Chuong 
-     *get all menu by role id
+     *Purpose:get all menu by role id
+     *Date:2012/04/17
      */
     public DataSet getAllMenuByRoleId(int roleId)
     {
@@ -37,7 +38,8 @@ public class MenuDAL:ConfigurationDAL
 
     /*
      *Author:La Quoc Chuong
-     *get sub menu of menu by menu id and role id
+     *Purpose:get sub menu of menu by menu id and role id
+     *Date:2012/04/17
      */
     public DataSet getSubMenuByMenuIdAndRoleId(int roleId, int menuId)
     {
