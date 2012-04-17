@@ -38,11 +38,13 @@
 <body>
 <div class="container">
     <div id="header">
-    <div style="float: right; padding: 5px 10px 0px 0px;"><a href="#" target="_blank" title="View and update profile">Profile</a> | <a href="http://localhost:1108/eproject/" target="_blank" title="View my web">View my web</a> | <a href="#">Logout</a></div>
+    <div style="float: right; padding: 5px 10px 0px 0px;"><a href="../ProfileInfo.aspx" title="View profile" runat=server>My Profile</a> | <a href="../Default.aspx" title="Front Page" runat=server>Front Page</a> | 
+        <a href="../Logout.aspx" runat="server">Logout</a></div>
+        
     </div>
     <div>
         <ul class="topnav" id="topnav" runat="server">
-            <li><a href="Default.aspxp">Home</a></li>
+            <!--<li><a href="Default.aspxp">Home</a></li>
             <li><a href="Employee.aspx">Employee</a>
                 <ul class="subnav">
                 <li><a href="Add-Emp.asx">Add new Employee</a></li>
@@ -75,7 +77,7 @@
             </form></li>
                     <li><a href="Adv-Search.aspx">Advanced Search</a></li>
             </ul>
-            </li>
+            </li>-->
         </ul>
     </div>
 </head>
