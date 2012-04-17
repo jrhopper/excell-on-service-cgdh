@@ -4,22 +4,52 @@ using System.Linq;
 using System.Web;
 using System.Collections;
 using WebApplication1.Entities;
+using System.Data.SqlClient;
+using System.Data;
 
 /// <summary>
 /// Summary description for MenuDAL
 /// </summary>
-public class MenuDAL
+public class MenuDAL:ConfigurationDAL
 {
     public MenuDAL()
     { }
-		//
-		// TODO: Add constructor logic here
-		//
+		
 
-    public List<Menu> getAllMenu()
+    /*
+     *Author:La Quoc Chuong 
+     *get all menu by role id
+     */
+    public DataSet getAllMenuByRoleId(int roleId)
     {
-        List<Menu> arr = new List<Menu>();
-        return arr;
+        SqlConnection conn = connectDB();
+        openConnect();
+        String query = "select distinct m.id as menuid,m.name,m.link "
+                        +" from menu m inner join roledetail r "
+                        +" on m.id = r.menuid "
+                        +" where r.roleid = "+roleId;
+        SqlDataAdapter da = new SqlDataAdapter(query, conn);
+        DataSet ds = new DataSet();
+        da.Fill(ds);
+        closeConnect();
+        return ds;        
     }
-	
+
+    /*
+     *Author:La Quoc Chuong
+     *get sub menu of menu by menu id and role id
+     */
+    public DataSet getSubMenuByMenuIdAndRoleId(int roleId, int menuId)
+    {
+        SqlConnection conn = connectDB();
+        openConnect();
+        String query = "select ro.id,ro.menuid,ro.roleid,ro.actionid,a.name,a.link "
+                        +" from roledetail ro inner join action a on a.id = ro.actionid "
+                        +" where roleid = "+roleId+" and menuid = "+menuId;
+        SqlDataAdapter da = new SqlDataAdapter(query, conn);
+        DataSet ds = new DataSet();
+        da.Fill(ds);
+        closeConnect();
+        return ds;
+    }
 }
