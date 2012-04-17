@@ -25,4 +25,11 @@ public class EmployeeBLL
         DataSet ds = empDAL.getRoleIdOfEmployeeByUserName(userName);
         return ds;
     }
+
+    public DataSet getAllEmployee()
+    {
+        EmployeeDAL empDAL = new EmployeeDAL();
+        DataSet ds = empDAL.getAllEmployee();
+        return ds;
+    }
 }
