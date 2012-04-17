@@ -85,7 +85,7 @@
     
 </body>
 
-	<div id="footer">
+	<div id="footer"><!--
 		<ul class="contacts">
 			<h3>Contact Us</h3>
 			<li><span>Email</span><p>: tronggia@gmail.com</p></li>
@@ -101,7 +101,7 @@
 				<input type="password" value="" class="txtfield" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}" />
 				<input type="submit" value="" title="Login" class="button" />
 			</form>
-		</div>
+		</div>-->
 		<div style="text-align: center; font-size: 12px;">Copyright &copy; 2012 Excell-On Service. All rights reserved - <a href="Admin/Default.aspx" title="Admin Control Panel">Admin Control Panel</a>
         <p>Address: Nguyen Chi Thanh st, Ho Chi Minh City</p>
         <p>Hotline: 0934 813161</p>
