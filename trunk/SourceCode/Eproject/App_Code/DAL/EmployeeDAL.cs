@@ -17,6 +17,11 @@ public class EmployeeDAL:ConfigurationDAL
     
     }
 
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: check exists of employee by checking user name and password
+     *Date: 2012/04/17
+     */
     public int checkExistsEmployeeByUserNamePassword(String userName,String password)
     {
         SqlConnection conn = connectDB();
@@ -33,11 +38,40 @@ public class EmployeeDAL:ConfigurationDAL
         return count;
     }
 
+    /*
+     * Author:La Quoc Chuong
+     * Purpose:get role id of employee by checking user name
+     * Date: 2012/04/17
+     */
     public DataSet getRoleIdOfEmployeeByUserName(String user)
     {
         SqlConnection conn = connectDB();
         openConnect();
         String query = "select roleid from employee where userName = '"+user+"'";
+        SqlDataAdapter da = new SqlDataAdapter(query, conn);
+        DataSet ds = new DataSet();
+        da.Fill(ds);
+        return ds;
+    }
+
+    /*
+     * Author:La Quoc Chuong
+     * Purpose: get all employee
+     * Date:2012/04/17
+     */
+    public DataSet getAllEmployee()
+    {
+        SqlConnection conn = connectDB();
+        openConnect();
+        String query = "  select e.id,username,password,d.name as department,r.name as role,e.name,"
+                        +" cast(DatePart(dd,birthday) as varchar(2))+'-'+"
+                        +" cast(DatePart(mm,birthday) as varchar(2))+'-'+"
+                        +" cast(DatePart(yyyy,birthday) as varchar(4)) as birthday,"
+                        +" (case sex when 1 then 'Male' when 0 then 'Female' end) as gender,"
+                        +" address,phone,email  "
+                        +" from department d inner join employee e "
+                        +" on d.id = e.department inner join role r " 
+                        +" on r.id = e.roleid ";
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         DataSet ds = new DataSet();
         da.Fill(ds);
