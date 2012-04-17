@@ -10,41 +10,38 @@ using System.Data;
 /// <summary>
 /// Summary description for EmployeeDAL
 /// </summary>
-public class EmployeeDAL
+public class EmployeeDAL:ConfigurationDAL
 {
-    ConfigurationDAL config;   
-    SqlConnection con;    
-
-	public EmployeeDAL()
+    public EmployeeDAL()
 	{
     
     }
-		//
-		// TODO: Add constructor logic here
-		//
 
-    public DataSet getAllEmployee()
+    public int checkExistsEmployeeByUserNamePassword(String userName,String password)
     {
-        config = new ConfigurationDAL();
-        con = config.connectDB();
-        config.openConnect();
-        SqlDataAdapter da = new SqlDataAdapter("select * from employee", con);
+        SqlConnection conn = connectDB();
+        openConnect();
+        String query = "select count(*) as count from employee where userName = @user and password = @pass";
+        SqlCommand cmd = new SqlCommand(query,conn);
+        cmd.Parameters.AddWithValue("@user",userName);
+        cmd.Parameters.AddWithValue("@pass", password);
+        SqlDataReader reader = cmd.ExecuteReader();
+        int count = 0;
+        while (reader.Read())
+            count = (int)reader["count"];
+        closeConnect();
+        return count;
+    }
+
+    public DataSet getRoleIdOfEmployeeByUserName(String user)
+    {
+        SqlConnection conn = connectDB();
+        openConnect();
+        String query = "select roleid from employee where userName = '"+user+"'";
+        SqlDataAdapter da = new SqlDataAdapter(query, conn);
         DataSet ds = new DataSet();
         da.Fill(ds);
-        config.closeConnect();
         return ds;
     }
-
-    public Employee getEmployeeByUserName(String userName)
-    {
-        Employee emp = new Employee();
-        config = new ConfigurationDAL();
-        con = config.connectDB();
-        config.openConnect();
-        SqlDataAdapter da = new SqlDataAdapter("select * from employee where username = '"+userName+"'",con);
-        DataSet ds = new DataSet();
-        da.Fill(ds);
-        return emp;
-    }
-	
+    
 }
