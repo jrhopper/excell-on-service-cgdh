@@ -75,8 +75,8 @@ namespace WebApplication1.Entities
 
         public String Username
         {
-            get { return username; }
-            set { username = value; }
+            get { return userName; }
+            set { userName = value; }
         }
 
         public String Id
