@@ -18,6 +18,11 @@ public class ConfigurationDAL
 
     }
 
+    /*
+     * Author:La Quoc Chuong
+     * Purpose:connect database
+     * Date:2012/04/17
+     */
     public SqlConnection connectDB()
     {        
        strCon = ConfigurationManager.ConnectionStrings["strCon"].ConnectionString;
@@ -25,11 +30,21 @@ public class ConfigurationDAL
        return con;
     }
 
+    /*
+     *Author:La Quoc Chuong 
+     * Purpose:open connect
+     * Date:2012/04/17
+     */
     public void openConnect()
     {
         con.Open();
     }
 
+    /*
+     * Author:La Quoc Chuong
+     * Purpose:close connect
+     * Date:2012/04/17
+     */
     public void closeConnect()
     {
         con.Close();
