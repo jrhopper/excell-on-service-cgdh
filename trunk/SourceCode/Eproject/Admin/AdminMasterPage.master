@@ -38,7 +38,7 @@
 <body>
 <div class="container">
     <div id="header">
-    <div style="float: right; padding: 5px 10px 0px 0px;"><a href="../ProfileInfo.aspx" title="View profile" runat=server>My Profile</a> | <a href="../Default.aspx" title="Front Page" runat=server>Front Page</a> | 
+    <div style="float: right; padding: 5px 10px 0px 0px;"><a href="ProfileInfo.aspx" title="View profile" runat=server>My Profile</a> | <a href="../Default.aspx" title="Front Page" runat=server>Front Page</a> | 
         <a href="../Logout.aspx" runat="server">Logout</a></div>
         
     </div>
