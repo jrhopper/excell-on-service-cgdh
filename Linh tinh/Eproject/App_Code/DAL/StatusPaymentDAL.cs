@@ -30,6 +30,7 @@ public class StatusPaymentDAL:ConfigurationDAL
                         + " cast(DatePart(dd,date) as varchar(2))+'-'+"
                         + " cast(DatePart(mm,date) as varchar(2))+'-'+"
                         + " cast(DatePart(yyyy,date) as varchar(4)) as date,"
+                        + " e.description"
                         + " from serviceorder d inner join statuspayment e "
                         + " on d.id = e.id";
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
