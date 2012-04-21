@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Admin_ManageServiceOrder : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+        //Response.Write("<script>alert('" + Session["user"] + "');</script>");
+        
+        loadData();
+    }
+
+    public void loadData()
+    {
+        ConfigurationDAL c = new ConfigurationDAL();
+        c.connectDB();
+        c.openConnect();
+        ServiceOrderBLL soBLL = new ServiceOrderBLL();
+        gvServiceOrder.DataSource = soBLL.getAllServiceOrder();
+        gvServiceOrder.DataBind();
+        c.closeConnect();
+    }
+
+    protected void gvServiceOrder_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void gvServiceOrder_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        Response.Write("<script>alert('" + e.RowIndex + "');</script>");
+    }
+}
