@@ -8,25 +8,22 @@ using System.Web.UI.WebControls;
 public partial class Admin_ManageDepartment : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
-    {
-        loadData();
-    }
-    public void loadData()
-    {
-        ConfigurationDAL c = new ConfigurationDAL();
-        c.connectDB();
-        c.openConnect();
-        DepartmentBLL deBLL = new DepartmentBLL();
-        gvDepartment.DataSource = deBLL.getAllDepartment();
+    {        
+        ConfigurationDAL con = new ConfigurationDAL();
+        con.connectDB();
+        con.openConnect();
+        DepartmentBLL depBLL = new DepartmentBLL();
+        gvDepartment.DataSource = depBLL.getAllDepartment();
         gvDepartment.DataBind();
-        c.closeConnect();
+        con.closeConnect();
     }
     protected void gvDepartment_SelectedIndexChanged(object sender, EventArgs e)
     {
 
     }
-    protected void gvDepartment_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    protected void btnPrint_Click(object sender, EventArgs e)
     {
-        Response.Write("<script>alert('" + e.RowIndex + "');</script>");
+        Session["ctrl"] = gvDepartment;
+        ClientScript.RegisterStartupScript(this.GetType(), "onclick", "<script language=javascript>window.open('Print.aspx','PrintMe','height=768px,width=1366px,scrollbars=1');</script>");
     }
 }
