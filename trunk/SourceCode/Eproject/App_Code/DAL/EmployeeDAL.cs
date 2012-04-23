@@ -77,5 +77,47 @@ public class EmployeeDAL:ConfigurationDAL
         da.Fill(ds);
         return ds;
     }
-    
+
+    public Employee getEmployeeByUserName(String user)
+    {
+        Employee emp = new Employee();
+        SqlConnection conn = connectDB();
+        openConnect();
+        String query = "select username,password,name, "
+                        +" (cast(datepart(dd,birthday) as varchar(2))+'/'+ cast(datepart(mm,birthday) as varchar(2))+'/'+cast(datepart(yyyy,birthday) as varchar(4))) as birthday, "
+                        +" sex,address,phone,email "
+                        +" from employee where username = @user";
+        SqlCommand cmd = new SqlCommand(query, conn);
+        cmd.Parameters.Add("@user",user);
+        SqlDataReader reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            emp.Username = reader.GetString(0).ToString();
+            emp.Password = reader.GetString(1).ToString();
+            emp.Name = reader.GetString(2).ToString();
+            emp.Birthday = reader.GetString(3).ToString();
+            emp.Sex = reader.GetInt32(4).ToString();
+            emp.Address = reader.GetString(5).ToString();
+            emp.Phone = reader.GetString(6).ToString();
+            emp.Email = reader.GetString(7).ToString();
+        }
+        return emp;
+    }
+
+    public int updateEmployee(String user, String name, String birthday, int sex, String address, String phone, String email)
+    {
+        SqlConnection conn = connectDB();
+        openConnect();
+        String query = "update employee set name = @name, birthday= @birthday, sex= @sex, address = @address,"
+                        +" phone = @phone, email = @email where username = @user";
+        SqlCommand cmd = new SqlCommand(query, conn);
+        cmd.Parameters.AddWithValue("@name", name);
+        cmd.Parameters.AddWithValue("@birthday", birthday);
+        cmd.Parameters.AddWithValue("@sex", sex);
+        cmd.Parameters.AddWithValue("@address", address);
+        cmd.Parameters.AddWithValue("@phone", phone);
+        cmd.Parameters.AddWithValue("@email", email);
+        cmd.Parameters.AddWithValue("@user", user);
+        return cmd.ExecuteNonQuery();
+    }
 }

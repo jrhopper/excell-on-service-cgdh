@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
+using WebApplication1.Entities;
 
 /// <summary>
 /// Summary description for EmployeeBLL
@@ -46,5 +47,17 @@ public class EmployeeBLL
         EmployeeDAL empDAL = new EmployeeDAL();
         DataSet ds = empDAL.getAllEmployee();
         return ds;
+    }
+
+    public Employee getEmployeeByUser(String user)
+    {
+        EmployeeDAL empDAL = new EmployeeDAL();
+        return empDAL.getEmployeeByUserName(user);        
+    }
+
+    public int updateEmployee(String user, String name, String birthday, int sex, String address, String phone, String email)
+    {
+        EmployeeDAL empDAL = new EmployeeDAL();
+        return empDAL.updateEmployee( user,  name,  birthday,  sex,  address,  phone,  email);
     }
 }
