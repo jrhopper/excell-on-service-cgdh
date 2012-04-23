@@ -27,8 +27,6 @@
             <asp:BoundField DataField="complete" HeaderText="Complete"></asp:BoundField>
             <asp:BoundField DataField="description" HeaderText="Description">
             </asp:BoundField>
-            <asp:HyperLinkField HeaderText="Link" NavigateUrl="OrderDetail.aspx?id=123" 
-                Text="fgerg" />
         </Columns>
         <EditRowStyle Width="300px" />
         <FooterStyle BackColor="#CCCCCC" />
