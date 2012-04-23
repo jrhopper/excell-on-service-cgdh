@@ -74,16 +74,16 @@
 				<li><a href="About.aspx">About us</a></li>
 				<li><a href="Services.aspx">Services</a></li>
 				<li><a href="Solutions.aspx">Solutions</a></li>
-				<li><a href="Support.aspx">Support</a></li>
+				<li><a href="SaleOff.aspx">Sale Off</a></li>
 				<li><a href="Feedback.aspx">Feedback</a></li>
 				<li><a href="Contact.aspx">Contact</a></li>
 			</ul>
 		</div>
 		<div id="search">
-			
+			<div id="EOS" style="display: inline-block; margin: auto; padding: 5px 4px 4px;">	
 				<input type="text" value="Search" class="txtfield" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}" />
 				<input type="submit" value="" class="button" />
-			
+			</div>
 		</div>
 	</div> <!-- /#header -->
 
