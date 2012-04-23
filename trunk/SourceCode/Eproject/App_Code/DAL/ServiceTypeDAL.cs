@@ -26,7 +26,7 @@ public class ServiceTypeDAL:ConfigurationDAL
     {
         SqlConnection conn = connectDB();
         openConnect();
-        String query = "  select name,image,charges,description"
+        String query = "  select id,name,image,charges,description"
                         + " from servicetype";
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         DataSet ds = new DataSet();

@@ -10,26 +10,24 @@ using System.Data;
 /// <summary>
 /// Summary description for EmployeeDAL
 /// </summary>
-public class ServiceOrderDetailDAL:ConfigurationDAL
+public class DepartmentDAL : ConfigurationDAL
 {
-    public ServiceOrderDetailDAL()
+    public DepartmentDAL()
 	{
     
     }
 
     /*
      * Author:Nguyen Kim Hoang
-     * Purpose: get all ServiceOrderDetail
+     * Purpose: get all Department
      * Date:2012/04/18
      */
-    public DataSet getAllServiceOrderDetail()
+    public DataSet getAllDepartment()
     {
         SqlConnection conn = connectDB();
         openConnect();
-        String query = "  select a.id as id,b.name as serviceorder,c.name as employee,a.taskname,a.description"
-                        + " from serviceorderdetail a inner join serviceorder b "
-                        + " on a.serviceorderid = b.id inner join employee c "
-                        + " on a.empid = c.id";
+        String query = "  select id,name,description"
+                        + " from department";
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         DataSet ds = new DataSet();
         da.Fill(ds);

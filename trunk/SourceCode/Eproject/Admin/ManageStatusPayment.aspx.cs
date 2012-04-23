@@ -9,6 +9,10 @@ public partial class Admin_ManageStatusPayment : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        loadData();
+    }
+    public void loadData()
+    {
         ConfigurationDAL c = new ConfigurationDAL();
         c.connectDB();
         c.openConnect();
@@ -17,9 +21,12 @@ public partial class Admin_ManageStatusPayment : System.Web.UI.Page
         gvStatusPayment.DataBind();
         c.closeConnect();
     }
-
     protected void gvStatusPayment_SelectedIndexChanged(object sender, EventArgs e)
     {
 
+    }
+    protected void gvStatusPayment_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        Response.Write("<script>alert('" + e.RowIndex + "');</script>");
     }
 }

@@ -26,7 +26,7 @@ public class ProductDAL:ConfigurationDAL
     {
         SqlConnection conn = connectDB();
         openConnect();
-        String query = "  select a.name,a.company,a.price,b.name as customer,a.description"
+        String query = "  select a.id,a.name,a.company,a.price,b.name as customer,a.description"
                         + " from product a inner join customer b "
                         + " on a.customerid = b.id";
         SqlDataAdapter da = new SqlDataAdapter(query, conn);

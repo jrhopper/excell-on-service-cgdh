@@ -26,7 +26,7 @@ public class ServiceOrderDAL:ConfigurationDAL
     {
         SqlConnection conn = connectDB();
         openConnect();
-        String query = "  select a.name as serviceorder,c.name as employee,d.name as customer,b.name as servicetype,"
+        String query = "  select a.id as id,a.name as serviceorder,c.name as employee,d.name as customer,b.name as servicetype,"
                         + " cast(DatePart(dd,begindate) as varchar(2))+'-'+"
                         + " cast(DatePart(mm,begindate) as varchar(2))+'-'+"
                         + " cast(DatePart(yyyy,begindate) as varchar(4)) as begindate,"
