@@ -5,8 +5,7 @@
 <div class="background">
 <div style="margin: 0 auto; width: 540px;">
     <h1 style="text-align:center">Feedback</h1>
-    <asp:TextBox  Visible="false" ID="txtTo" runat="server" Width="300px">tronggia@gmail.com,qchuong100@gmail.com</asp:TextBox>
-    <br /><br />
+	<br /><br />
     Your email:&nbsp;&nbsp;&nbsp;
     
     <asp:TextBox ID="txtEmail" runat="server" Width="300px"></asp:TextBox> &nbsp; <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
