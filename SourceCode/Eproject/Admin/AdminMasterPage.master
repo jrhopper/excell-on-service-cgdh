@@ -1,8 +1,11 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="Admin_AdminMasterPage" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+<form runat="server">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EProject - Excell On Service</title>
@@ -41,8 +44,13 @@
     <div style="float: right; padding: 5px 10px 0px 0px;"><a href="ProfileInfo.aspx" title="View profile" runat=server>My Profile</a> | <a href="../Default.aspx" title="Front Page" runat=server>Front Page</a> | 
         <a href="../Logout.aspx" runat="server">Logout</a></div>
         
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+        </asp:ToolkitScriptManager>
     </div>
     <div>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode=Conditional>
+        <ContentTemplate>
+        
         <ul class="topnav" id="topnav" runat="server">
             <!--<li><a href="Default.aspxp">Home</a></li>
             <li><a href="Employee.aspx">Employee</a>
@@ -79,12 +87,15 @@
             </ul>
             </li>-->
         </ul>
+        
+        </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
 </head>
 <body>
 	<div id="content">
 	<div style="padding: 10px">
-    <form id="form1" runat="server">
+    <form id="form1">
     <div><br /><br />
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
@@ -97,5 +108,5 @@
 	<div id="footer">
 	Copyright © 2012 Excell On Service
 	</div>
-</div>
+</div></form>
 </html>

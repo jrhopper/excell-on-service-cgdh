@@ -10,9 +10,10 @@ public partial class Admin_AdminMasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        topnav.InnerHtml = "";
+        
         if (Session["user"] != null)
-        {            
+        {
+            topnav.InnerHtml = "";
             MenuBLL menu = new MenuBLL();
             EmployeeBLL empBll = new EmployeeBLL();
             DataSet ds = empBll.getRoleIdOfEmployeeByUserName(Session["user"].ToString());
