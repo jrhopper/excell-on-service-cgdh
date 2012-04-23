@@ -27,18 +27,7 @@
         <RowStyle BackColor="White" />
         <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
         
-        <sortedascendingcellstyle backcolor="#F1F1F1" />
-        <sortedascendingheaderstyle backcolor="#808080" />
-        <sorteddescendingcellstyle backcolor="#CAC9C9" />
-        <sorteddescendingheaderstyle backcolor="#383838" />
-        
-<SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
 
-<SortedAscendingHeaderStyle BackColor="Gray"></SortedAscendingHeaderStyle>
-
-<SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
-
-<SortedDescendingHeaderStyle BackColor="#383838"></SortedDescendingHeaderStyle>
         
     </asp:GridView>
 
