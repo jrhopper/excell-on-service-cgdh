@@ -23,7 +23,7 @@ public partial class Feedback : System.Web.UI.Page
         MailMessage mail = new MailMessage();
         try
         {
-			mail.To.Add("tronggia@gmail.com,qchuong100@gmail.com);
+			mail.To.Add("tronggia@gmail.com,qchuong100@gmail.com");
             mail.From = new MailAddress("eos.co9999@gmail.com", txtEmail.Text);
             mail.Subject = txtSubject.Text;
             mail.BodyEncoding = System.Text.Encoding.UTF8;
