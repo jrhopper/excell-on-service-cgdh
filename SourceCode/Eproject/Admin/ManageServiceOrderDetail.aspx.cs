@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Admin_ManageProduct : System.Web.UI.Page
+public partial class Admin_ManageServiceOrderDetail : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -16,16 +16,16 @@ public partial class Admin_ManageProduct : System.Web.UI.Page
         ConfigurationDAL c = new ConfigurationDAL();
         c.connectDB();
         c.openConnect();
-        ProductBLL proBLL = new ProductBLL();
-        gvProduct.DataSource = proBLL.getAllProduct();
-        gvProduct.DataBind();
+        ServiceOrderDetailBLL sodBLL = new ServiceOrderDetailBLL();
+        gvServiceOrderDetail.DataSource = sodBLL.getAllServiceOrderDetail();
+        gvServiceOrderDetail.DataBind();
         c.closeConnect();
     }
-    protected void gvProduct_SelectedIndexChanged(object sender, EventArgs e)
+    protected void gvServiceOrderDetail_SelectedIndexChanged(object sender, EventArgs e)
     {
 
     }
-    protected void gvSProduct_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    protected void gvServiceOrderDetail_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
         Response.Write("<script>alert('" + e.RowIndex + "');</script>");
     }

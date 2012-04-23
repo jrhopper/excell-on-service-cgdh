@@ -26,7 +26,7 @@ public class CustomerDAL:ConfigurationDAL
     {
         SqlConnection conn = connectDB();
         openConnect();
-        String query = "  select name,address,phone,email,contact,company"
+        String query = "  select id,name,address,phone,email,contact,company"
                         + " from customer";
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         DataSet ds = new DataSet();

@@ -26,7 +26,7 @@ public class StatusPaymentDAL:ConfigurationDAL
     {
         SqlConnection conn = connectDB();
         openConnect();
-        String query = "  select e.Status,d.name as serviceorder,"
+        String query = "  select e.id,e.Status,d.name as serviceorder,"
                         + " cast(DatePart(dd,date) as varchar(2))+'-'+"
                         + " cast(DatePart(mm,date) as varchar(2))+'-'+"
                         + " cast(DatePart(yyyy,date) as varchar(4)) as date,"
