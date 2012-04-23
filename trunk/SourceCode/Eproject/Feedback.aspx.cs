@@ -21,13 +21,10 @@ public partial class Feedback : System.Web.UI.Page
         SmtpServer.Host = "smtp.gmail.com";
         SmtpServer.EnableSsl = true;
         MailMessage mail = new MailMessage();
-        String[] addr = txtTo.Text.Split(',');
         try
         {
+			mail.To.Add("tronggia@gmail.com,qchuong100@gmail.com);
             mail.From = new MailAddress("eos.co9999@gmail.com", txtEmail.Text);
-            Byte i;
-            for (i = 0; i < addr.Length; i++)
-                mail.To.Add(addr[i]);
             mail.Subject = txtSubject.Text;
             mail.BodyEncoding = System.Text.Encoding.UTF8;
             mail.Body = txtBody.Text;
