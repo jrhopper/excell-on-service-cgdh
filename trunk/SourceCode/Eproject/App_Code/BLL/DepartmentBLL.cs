@@ -5,22 +5,21 @@ using System.Web;
 using System.Data;
 
 /// <summary>
-/// Summary description for EmployeeBLL
+/// Summary description for DepartmentBLL
 /// </summary>
 public class DepartmentBLL
 {
-    public DepartmentBLL()
-    {
-    }
-    /*
-     * Author:Nguyen Kim Hoang
-     * Purpose: get all Department
-     * Date:2012/04/18
-     */
+	public DepartmentBLL()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+
     public DataSet getAllDepartment()
     {
-        DepartmentDAL deDAL = new DepartmentDAL();
-        DataSet ds = deDAL.getAllDepartment();
+        DepartmentDAL depDAL = new DepartmentDAL();
+        DataSet ds = depDAL.getAllDepartment();
         return ds;
     }
 }

@@ -8,30 +8,25 @@ using System.Data.SqlClient;
 using System.Data;
 
 /// <summary>
-/// Summary description for EmployeeDAL
+/// Summary description for Department
 /// </summary>
-public class DepartmentDAL : ConfigurationDAL
+public class DepartmentDAL:ConfigurationDAL
 {
-    public DepartmentDAL()
+	public DepartmentDAL()
 	{
-    
-    }
+		//
+		// TODO: Add constructor logic here
+		//
+	}
 
-    /*
-     * Author:Nguyen Kim Hoang
-     * Purpose: get all Department
-     * Date:2012/04/18
-     */
     public DataSet getAllDepartment()
     {
         SqlConnection conn = connectDB();
         openConnect();
-        String query = "  select id,name,description"
-                        + " from department";
+        String query = "SELECT * FROM Department";
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         DataSet ds = new DataSet();
         da.Fill(ds);
         return ds;
     }
-    
 }
