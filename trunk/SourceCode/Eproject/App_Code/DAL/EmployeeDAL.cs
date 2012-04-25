@@ -78,6 +78,11 @@ public class EmployeeDAL:ConfigurationDAL
         return ds;
     }
 
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: get employee by user name
+     *Date: 2012/04/17
+     */
     public Employee getEmployeeByUserName(String user)
     {
         Employee emp = new Employee();
@@ -104,6 +109,11 @@ public class EmployeeDAL:ConfigurationDAL
         return emp;
     }
 
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: update info of employee
+     *Date: 2012/04/17
+     */
     public int updateEmployee(String user, String name, String birthday, int sex, String address, String phone, String email)
     {
         SqlConnection conn = connectDB();
@@ -121,6 +131,11 @@ public class EmployeeDAL:ConfigurationDAL
         return cmd.ExecuteNonQuery();
     }
 
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: change password
+     *Date: 2012/04/17
+     */
     public void changePass(String newPass,String userName)
     {
         SqlConnection conn = connectDB();
