@@ -120,4 +120,14 @@ public class EmployeeDAL:ConfigurationDAL
         cmd.Parameters.AddWithValue("@user", user);
         return cmd.ExecuteNonQuery();
     }
+
+    public void changePass(String newPass,String userName)
+    {
+        SqlConnection conn = connectDB();
+        openConnect();
+        SqlCommand cmd = new SqlCommand("Exec SP_ChangePassword @NewPass,@UserName", conn);
+        cmd.Parameters.AddWithValue("@NewPass", newPass);
+        cmd.Parameters.AddWithValue("@UserName", userName);
+        cmd.ExecuteNonQuery();
+    }
 }
