@@ -44,12 +44,10 @@
     <div style="float: right; padding: 5px 10px 0px 0px;"><a href="ProfileInfo.aspx" title="View profile" runat=server>My Profile</a> | <a href="../Default.aspx" title="Front Page" runat=server>Front Page</a> | 
         <a href="../Logout.aspx" runat="server">Logout</a></div>
         
-        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-        </asp:ToolkitScriptManager>
+        
     </div>
     <div>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode=Conditional>
-        <ContentTemplate>
+        
         
         <ul class="topnav" id="topnav" runat="server">
             <!--<li><a href="Default.aspxp">Home</a></li>
@@ -88,8 +86,7 @@
             </li>-->
         </ul>
         
-        </ContentTemplate>
-        </asp:UpdatePanel>
+        
     </div>
 </head>
 <body>
