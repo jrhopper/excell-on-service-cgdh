@@ -60,4 +60,10 @@ public class EmployeeBLL
         EmployeeDAL empDAL = new EmployeeDAL();
         return empDAL.updateEmployee( user,  name,  birthday,  sex,  address,  phone,  email);
     }
+
+    public void changePass(String newPass, String userName)
+    {
+        EmployeeDAL emplDAL = new EmployeeDAL();
+        emplDAL.changePass(newPass,userName);
+    }
 }
