@@ -19,7 +19,6 @@ public partial class ProfileInfo : System.Web.UI.Page
         EmployeeBLL empBLL = new EmployeeBLL();
         Employee emp = empBLL.getEmployeeByUser(Session["user"].ToString());
         txtUserName.Text = emp.Username;
-        txtPassword.Text = emp.Password;
         txtName.Text = emp.Name;
         txtBirthday.Text = emp.Birthday;
         if (emp.Sex.Equals("0"))
