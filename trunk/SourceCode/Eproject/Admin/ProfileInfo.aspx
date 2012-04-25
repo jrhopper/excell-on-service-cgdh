@@ -19,7 +19,8 @@
         </tr>
         <tr>            
             <td colspan=2>
-                <center><asp:Label ID="lbProfile" ForeColor=Blue Font-Size=Large Font-Bold=true runat="server" Text="My Profile"></asp:Label></center>
+                <center><asp:Label ID="lbProfile" ForeColor=Blue Font-Size=Larger Font-Bold=true runat="server" Text="My Profile"></asp:Label></center>
+                <br />
             </td>
         </tr>
         <tr>
@@ -31,9 +32,9 @@
         </tr>
         <tr>
             <td>Password</td>               
-            <td>               
-                <asp:TextBox ID="txtPassword" ReadOnly=true runat="server" TextMode=Password></asp:TextBox>                                        
-                <asp:Button ID="btnChangePassword" PostBackUrl="~/Admin/ChangePass.aspx" runat="server" Text="Change" />
+            <td>   
+                <asp:LinkButton ID="btnChangePassword" PostBackUrl="~/Admin/ChangePass.aspx" runat="server">Change password</asp:LinkButton>                                                        
+                
             </td>               
         </tr>
         <tr>
