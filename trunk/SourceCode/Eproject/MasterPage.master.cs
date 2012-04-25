@@ -26,7 +26,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
             Session["user"] = LoginTop.UserName;
             e.Authenticated = true;
         }
-        else
-            Response.Write("<b style='color:white'>sjahsdjkahjsdhk</b>");
+        //else
+            //Response.Write("<b style='color:white'>sjahsdjkahjsdhk</b>");
     }
 }
