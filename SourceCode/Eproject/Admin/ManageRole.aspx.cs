@@ -9,8 +9,19 @@ public partial class Admin_ManageRole : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(!this.IsPostBack)
+        if (!this.IsPostBack)
+        {
             loadData();
+            EmployeeBLL empBLL = new EmployeeBLL();
+            if (empBLL.getRoleIdOfEmployeeByUserName(Session["user"].ToString()).Tables[0].Rows[0]["roleid"].ToString() == "0")
+            {
+                gvRole.Columns[4].Visible = false;
+            }
+            else
+            {
+                gvRole.Columns[4].Visible = true;
+            }
+        }
     }
 
     public void loadData()
@@ -26,10 +37,15 @@ public partial class Admin_ManageRole : System.Web.UI.Page
         if (e.CommandName == "updateRole")
         {
             //Response.Write("<b style='color:white'>update</b>");
-            Response.Redirect("FormUpdateRole.aspx?id=" + int.Parse(gvRole.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text)); //int.Parse(gvRole.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text);
+            Response.Redirect("UpdateRole.aspx?id=" + int.Parse(gvRole.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text)); //int.Parse(gvRole.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text);
+        }
+        if (e.CommandName == "detail")
+        {
+            int roleId = int.Parse(gvRole.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text);
+            Response.Redirect("RoleDetailList.aspx?id="+roleId);
         }
         if (e.CommandName == "deleteRole")
-        {
+        {            
             //Response.Write("<b style='color:white'>delete</b>");
             RoleBLL roleBLL = new RoleBLL();
             //Response.Write("<b style='color:white'>"+roleBLL.deleteRole(int.Parse(gvRole.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text))+"</b>");
@@ -45,8 +61,8 @@ public partial class Admin_ManageRole : System.Web.UI.Page
         }
     }
 
-    public void btnCreateNew_Click(object sender, EventArgs e)
+    public void btnNewRole_Click(object sender, EventArgs e)
     {
-        Response.Redirect("FormCreateRole.aspx");
+        Response.Redirect("NewRole.aspx");
     }
 }

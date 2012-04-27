@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections;
+using WebApplication1.Entities;
 
 /// <summary>
 /// Summary description for Role
@@ -133,5 +135,26 @@ public class RoleDAL:ConfigurationDAL
         cmd.Parameters.AddWithValue("@name",name);
         cmd.Parameters.AddWithValue("@description",description);
         return cmd.ExecuteNonQuery();
+    }
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: get all role detail
+     *Date: 2012/04/17
+     */
+    public DataSet getAllRoleDetailByRoleId(int id)
+    {
+        DataSet ds = new DataSet();
+        
+        SqlConnection conn = connectDB();
+        openConnect();
+        
+        String query = "select d.id as [RoleDetailId],d.menuid as MenuId,d.roleid as RoleId,d.actionid as ActionId,d.description as RoleDetailDescription,a.name as ActionName,m.name as MenuName,r.name as RoleName "
+	                                        +" from roledetail d inner join [role] r on d.roleid = r.id "
+	                                        +" inner join menu m on d.menuid = m.id "
+	                                        +" inner join [action] a on d.actionid = a.id "
+                                            + " where d.roleid = "+id;
+        SqlDataAdapter da = new SqlDataAdapter(query,conn);
+        da.Fill(ds);
+        return ds;
     }
 }

@@ -9,7 +9,7 @@
     </p>
     <p>
         <asp:Label ID="Label1" runat="server" Font-Bold="False" Font-Size="25pt" 
-            ForeColor="#0066FF" Text="Management Role"></asp:Label>
+            ForeColor="#0066FF" Text="Role Management"></asp:Label>
     </p>
     <br />
     <p>
@@ -38,11 +38,20 @@
                     ImageUrl="~/images/delete_icon.png" >
                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="30px" />
                 </asp:ButtonField>
+                
+                <asp:ButtonField CommandName="detail_" Text="Detail_" Visible=false />
             </Columns>
         </asp:GridView>
         <br />
     </p>
-    <asp:Button ID="btnCreate" OnClick="btnCreateNew_Click" runat="server" Text="Create New Role" />
+    <asp:Button ID="btnNewRole" style="margin-left:2px" OnClick="btnNewRole_Click" runat="server" Text="New Role" />
+    <asp:Button ID="btnNewMenu" style="margin-left:2px" runat="server" Text="New Menu" PostBackUrl="~/Admin/NewMenu.aspx" />    
+    <asp:Button ID="btnNewAction" style="margin-left:2px" runat="server" Text="New Action" PostBackUrl="~/Admin/NewAction.aspx" />    
+    <asp:Button ID="btnNewRoleDetail" style="margin-left:2px" runat="server" Text="New Role Detail"  PostBackUrl="~/Admin/NewRoleDetail.aspx"/>
+    <asp:Button ID="btnViewRoleDetail" style="margin-left:2px" runat="server" Text="Role Detail List" PostBackUrl="~/Admin/RoleDetail.aspx" />
+    <asp:Button ID="btnViewAction" style="margin-left:2px" runat="server" Text="Action List" PostBackUrl="~/Admin/Action.aspx" />
+    <asp:Button ID="btnViewMenu" style="margin-left:2px" runat="server" Text="Menu List" PostBackUrl="~/Admin/Menu.aspx" />
+    
 </center>
 </asp:Content>
 

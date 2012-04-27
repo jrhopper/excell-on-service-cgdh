@@ -145,4 +145,6 @@ public class EmployeeDAL:ConfigurationDAL
         cmd.Parameters.AddWithValue("@UserName", userName);
         cmd.ExecuteNonQuery();
     }
+    
+
 }

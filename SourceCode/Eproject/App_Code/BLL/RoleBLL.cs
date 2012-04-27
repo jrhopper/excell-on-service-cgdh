@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
+using WebApplication1.Entities;
 
 /// <summary>
 /// Summary description for RoleBLL
@@ -70,5 +71,14 @@ public class RoleBLL
     public int insert(String name, String description)
     {
         return roleDAL.insert(name, description);
+    }
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: get list role detail by role id
+     *Date: 2012/04/17
+     */
+    public DataSet getAllRoleDetailByRoleId(int id)
+    {
+        return roleDAL.getAllRoleDetailByRoleId(id);
     }
 }
