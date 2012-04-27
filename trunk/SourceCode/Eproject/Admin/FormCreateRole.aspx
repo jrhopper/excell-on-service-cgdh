@@ -8,7 +8,7 @@
     </p>
 </center>
     <br />
-    <table style="margin-left:250px">
+    <table style="margin-left:280px">
         
         <tr>
             <td>Name</td>
