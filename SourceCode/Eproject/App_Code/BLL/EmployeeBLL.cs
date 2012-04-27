@@ -49,18 +49,31 @@ public class EmployeeBLL
         return ds;
     }
 
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: get employee by user
+     *Date: 2012/04/17
+     */
     public Employee getEmployeeByUser(String user)
     {
         EmployeeDAL empDAL = new EmployeeDAL();
         return empDAL.getEmployeeByUserName(user);        
     }
-
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: update employee
+     *Date: 2012/04/17
+     */
     public int updateEmployee(String user, String name, String birthday, int sex, String address, String phone, String email)
     {
         EmployeeDAL empDAL = new EmployeeDAL();
         return empDAL.updateEmployee( user,  name,  birthday,  sex,  address,  phone,  email);
     }
-
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: change password
+     *Date: 2012/04/17
+     */
     public void changePass(String newPass, String userName)
     {
         EmployeeDAL emplDAL = new EmployeeDAL();
