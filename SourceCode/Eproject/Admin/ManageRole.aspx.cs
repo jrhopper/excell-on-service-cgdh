@@ -15,7 +15,7 @@ public partial class Admin_ManageRole : System.Web.UI.Page
             EmployeeBLL empBLL = new EmployeeBLL();
             if (empBLL.getRoleIdOfEmployeeByUserName(Session["user"].ToString()).Tables[0].Rows[0]["roleid"].ToString() == "0")
             {
-                gvRole.Columns[4].Visible = false;
+                gvRole.Columns[4].Visible = true;
             }
             else
             {
