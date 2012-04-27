@@ -1,17 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="NewRole.aspx.cs" Inherits="Admin_FormCreateRole" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
+    
      <p style="margin-left:350px">
         <asp:Label ID="Label1" runat="server" Font-Bold="False" Font-Size="25pt" 
             ForeColor="#0066FF" Text="New Role"></asp:Label>
     </p>
 
     <br />
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-    
         
     <table style="margin-left:300px" width=400>
         
@@ -37,16 +33,15 @@
             <td colspan=2>
             
                  
-                <asp:Button style="margin-left:80px" ID="btnCreate" runat="server" Text="Create" 
+                <asp:Button style="margin-left:80px" ID="btnCreate" UseSubmitBehavior=false  runat="server" Text="Create" 
                     onclick="btnCreate_Click" />
-            <asp:Button ID="btn" PostBackUrl="~/Admin/ManageRole.aspx" CausesValidation=false runat="server" Text="Role List" 
+            <asp:Button ID="btn" PostBackUrl="~/Admin/ManageRole.aspx" CausesValidation=false runat="server" Text="Role Management" 
                      />
             </td>
             
         </tr>
     </table>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+        
 
 </asp:Content>
 
