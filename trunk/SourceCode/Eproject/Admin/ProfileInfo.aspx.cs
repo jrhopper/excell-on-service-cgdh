@@ -51,7 +51,7 @@ public partial class ProfileInfo : System.Web.UI.Page
         //Response.Write("<b style='color:white'>"+empBLL.updateEmployee(username, name, birthday, sex, address, phone, email)+"</b>");
         if (empBLL.updateEmployee(username, name,birthday, sex, address,phone, email) != -1)
         {
-            lbMessage.Text = "Update Successful!";
+            lbMessage.Text = "Update Successful!";            
             //lbMessage.Text = username + "-" + name + "-" + birthday + "-" + sex + "-" + address + "-" + phone + "-" + email;
             loadData();
         }
