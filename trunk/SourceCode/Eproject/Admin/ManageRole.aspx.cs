@@ -60,9 +60,4 @@ public partial class Admin_ManageRole : System.Web.UI.Page
             }
         }
     }
-
-    public void btnNewRole_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("NewRole.aspx");
-    }
 }
