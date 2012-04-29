@@ -44,7 +44,7 @@
         </asp:GridView>
         <br />
     </p>
-    <asp:Button ID="btnNewRole" style="margin-left:2px" OnClick="btnNewRole_Click" runat="server" Text="New Role" />
+    <asp:Button ID="btnNewRole" style="margin-left:2px" PostBackUrl="NewRole.aspx" runat="server" Text="New Role" />
     <asp:Button ID="btnNewMenu" style="margin-left:2px" runat="server" Text="New Menu" PostBackUrl="~/Admin/NewMenu.aspx" />    
     <asp:Button ID="btnNewAction" style="margin-left:2px" runat="server" Text="New Action" PostBackUrl="~/Admin/NewAction.aspx" />    
     <asp:Button ID="btnNewRoleDetail" style="margin-left:2px" runat="server" Text="New Role Detail"  PostBackUrl="~/Admin/NewRoleDetail.aspx"/>
