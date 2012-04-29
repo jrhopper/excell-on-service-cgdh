@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="Menu.aspx.cs" Inherits="Admin_Menu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<style>
+.left
+{
+    padding-left:20px;
+}
+</style>
 <center>
     <p>
         <asp:Label ID="Label1" runat="server" Font-Bold="False" Font-Size="25pt" 
@@ -11,17 +17,17 @@
             EnableModelValidation="True" onrowcommand="gvMenu_RowCommand" PageSize="5">
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="ID">
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="50px" 
+                <ItemStyle HorizontalAlign="Center"  VerticalAlign="Middle" Width="50px" 
                     Height="30px" />
                 </asp:BoundField>
                 <asp:BoundField DataField="name" HeaderText="Name">
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="200px" />
+                <ItemStyle HorizontalAlign="Left" CssClass=left VerticalAlign="Middle" Width="200px" />
                 </asp:BoundField>
                 <asp:BoundField DataField="link" HeaderText="Link">
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="220px" />
+                <ItemStyle HorizontalAlign="Left" CssClass=left VerticalAlign="Middle" Width="220px" />
                 </asp:BoundField>
                 <asp:BoundField DataField="description" HeaderText="Description">
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="180px" />
+                <ItemStyle HorizontalAlign="Left" CssClass=left VerticalAlign="Middle" Width="180px" />
                 </asp:BoundField>
                 <asp:ButtonField ButtonType="Image" CommandName="update_menu" 
                     ImageUrl="~/images/edit_icon.png">
@@ -43,7 +49,7 @@
     <asp:Button ID="btnViewRoleDetail" style="margin-left:2px" runat="server" Text="Role Detail List" PostBackUrl="~/Admin/RoleDetail.aspx" />
     <asp:Button ID="btnViewAction" style="margin-left:2px" runat="server" Text="Action List" PostBackUrl="~/Admin/Action.aspx" />
     <asp:Button ID="btnViewMenu" style="margin-left:2px" runat="server" Text="Menu List" PostBackUrl="~/Admin/Menu.aspx" />
-    
+     <asp:Button ID="Button1" runat="server" CausesValidation=false PostBackUrl="~/Admin/ManageRole.aspx" Text="Role Management" />
     
 </center>
 </asp:Content>
