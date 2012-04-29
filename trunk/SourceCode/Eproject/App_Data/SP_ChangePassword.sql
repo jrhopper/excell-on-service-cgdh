@@ -1,3 +1,7 @@
+/*
+Author: La Quoc Chuong
+Purpose: change password
+*/
 create proc SP_ChangePassword  
 @NewPass varchar(50),
 @UserName varchar(50) 

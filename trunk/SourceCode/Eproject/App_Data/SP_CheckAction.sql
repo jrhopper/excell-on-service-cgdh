@@ -1,3 +1,7 @@
+/*
+Author: La Quoc Chuong
+Purpose: check action in roledetail. is it exists?
+*/
 if(exists(select * from sysobjects where name = 'SP_CheckAction'))
 begin
 	drop proc SP_CheckAction

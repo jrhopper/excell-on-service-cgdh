@@ -1,3 +1,7 @@
+/*
+Author: La Quoc Chuong
+Purpose: check menu in roledetail. is it exists in db
+*/
 if(exists(select * from sysobjects where name = 'SP_CheckMenu'))
 begin
 	drop proc SP_CheckMenu

@@ -1,3 +1,7 @@
+/*
+Author: La Quoc Chuong
+Purpose: update role by id
+*/
 if exists (select * from sysobjects where name = 'SP_UpdateRole')
 begin
 	drop proc SP_UpdateRole

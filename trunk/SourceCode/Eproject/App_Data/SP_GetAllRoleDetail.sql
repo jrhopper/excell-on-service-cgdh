@@ -1,3 +1,7 @@
+/*
+Author: La Quoc Chuong
+Purpose: get all role detail
+*/
 if exists (select * from sysobjects where name = 'SP_GetAllRoleDetail')
 begin
 	drop proc SP_GetAllRoleDetail
