@@ -11,7 +11,7 @@ using WebApplication1.Entities;
 /// </summary>
 public class MenuBLL:ConfigurationDAL
 {
-    MenuDAL menuBLL = new MenuDAL();
+    MenuDAL menuDAL = new MenuDAL();
 	public MenuBLL()
 	{
 		//
@@ -29,7 +29,7 @@ public class MenuBLL:ConfigurationDAL
         SqlConnection conn = connectDB();
         openConnect();
 
-        ds = menuBLL.getAllMenuByRoleId(roleId);
+        ds = menuDAL.getAllMenuByRoleId(roleId);
         List<Menu> list = new List<Menu>();
         if (ds.Tables[0].Rows.Count > 0)
         {
@@ -56,7 +56,7 @@ public class MenuBLL:ConfigurationDAL
         SqlConnection conn = connectDB();
         openConnect();
 
-        ds = menuBLL.getSubMenuByMenuIdAndRoleId(roleId, menuId);
+        ds = menuDAL.getSubMenuByMenuIdAndRoleId(roleId, menuId);
         List<Menu> list = new List<Menu>();
         if (ds.Tables[0].Rows.Count > 0)
         {
@@ -82,7 +82,7 @@ public class MenuBLL:ConfigurationDAL
      */
     public bool checkMenuName(String name)
     {
-        return menuBLL.checkMenuName(name);
+        return menuDAL.checkMenuName(name);
     }
 
     /*
@@ -92,7 +92,7 @@ public class MenuBLL:ConfigurationDAL
      */
     public void insert(String name, String link, String description)
     {
-        menuBLL.insert(name, link, description);
+        menuDAL.insert(name, link, description);
     }
     /*
      *Author:La Quoc Chuong
@@ -101,7 +101,7 @@ public class MenuBLL:ConfigurationDAL
      */
     public DataSet getAllMenu()
     {
-        return menuBLL.getAllMenu();
+        return menuDAL.getAllMenu();
     }
     /*
      *Author:La Quoc Chuong
@@ -110,7 +110,7 @@ public class MenuBLL:ConfigurationDAL
      */
     public DataSet getMenuById(int id)
     {
-        return menuBLL.getMenuById(id);
+        return menuDAL.getMenuById(id);
     }
     /*
      *Author:La Quoc Chuong
@@ -119,7 +119,7 @@ public class MenuBLL:ConfigurationDAL
      */
     public void update(int id, String name, String link, String description)
     {
-        menuBLL.update(id,name,link,description);
+        menuDAL.update(id, name, link, description);
     }
     /*
      *Author:La Quoc Chuong
@@ -128,6 +128,6 @@ public class MenuBLL:ConfigurationDAL
      */
     public int deleteMenu(int id)
     {
-        return menuBLL.deleteMenu(id);
+        return menuDAL.deleteMenu(id);
     }
 }
