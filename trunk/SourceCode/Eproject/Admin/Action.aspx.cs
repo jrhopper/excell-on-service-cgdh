@@ -15,12 +15,9 @@ public partial class Admin_Action : System.Web.UI.Page
 
     private void loadData()
     {
-        
-    }
-
-    public void btnCreate_Click(object sender, EventArgs e)
-    {
-
+        ActionBLL actionBLL = new ActionBLL();
+        gvAction.DataSource = actionBLL.getAllAction();
+        gvAction.DataBind();
     }
 
     protected void gvAction_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -28,7 +25,7 @@ public partial class Admin_Action : System.Web.UI.Page
         int actionId = int.Parse(gvAction.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text);
         if (e.CommandName == "update_Action")
         {
-            Response.Redirect("UpdateMenu.aspx?id=" + actionId);
+            Response.Redirect("UpdateAction.aspx?id=" + actionId);
         }
         if (e.CommandName == "delete_Action")
         {
