@@ -1,3 +1,7 @@
+/*
+Author: La Quoc Chuong
+Purpose: check role is exists in employee or roledetail.
+*/
 if(exists(select * from sysobjects where name = 'SP_CheckRole'))
 begin
 	drop proc SP_CheckRole
