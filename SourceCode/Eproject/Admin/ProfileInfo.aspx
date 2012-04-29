@@ -10,7 +10,7 @@
     
 
     <asp:Label ID="lbMessage" style="margin-left:300px" CssClass="lbMessage"
-     runat="server" Text="123123123" ForeColor="Red" Font-Size="Medium" Font-Bold=true></asp:Label>
+     runat="server" Text="" ForeColor="Red" Font-Size="Medium" Font-Bold=true></asp:Label>
     <br />
     <br />
 
