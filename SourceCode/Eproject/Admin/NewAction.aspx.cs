@@ -14,20 +14,20 @@ public partial class Admin_NewAction : System.Web.UI.Page
 
     public void btnCreate_Click(object sender, EventArgs e)
     {
-        //MenuBLL menuBLL = new MenuBLL();
-        //if (txtName.Text != "")
-        //{
-        //    if (menuBLL.checkMenuName(txtName.Text) == false)
-        //        lbMessage.Text = "This menu name is existed!";
-        //    if (menuBLL.checkMenuName(txtName.Text) == true)
-        //    {
-        //        lbMessage.Text = "create menu successful!";
-        //        menuBLL.insert(txtName.Text, txtLink.Text, txtDescription.Text);
-        //        Response.Redirect("Menu.aspx");
+        ActionBLL actionBLL = new ActionBLL();
+        if (txtName.Text != "")
+        {
+            if (actionBLL.checkActionName(txtName.Text) == false)
+                lbMessage.Text = "This action name is existed!";
+            if (actionBLL.checkActionName(txtName.Text) == true)
+            {
+                lbMessage.Text = "create action successful!";
+                actionBLL.insert(txtName.Text, txtLink.Text, txtDescription.Text);
+                Response.Redirect("Action.aspx");
 
-        //    }
-        //}
-        //else if (txtName.Text == "")
-        //    lbMessage.Text = "Menu name is null";
+            }
+        }
+        else if (txtName.Text == "")
+            lbMessage.Text = "Action name is null";
     }
 }
