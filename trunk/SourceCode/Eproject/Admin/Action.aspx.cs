@@ -30,7 +30,16 @@ public partial class Admin_Action : System.Web.UI.Page
         if (e.CommandName == "delete_Action")
         {
             //Response.Write("<b style='color:white'>asdasdasd</b>");
-            
+            ActionBLL actionBLL = new ActionBLL();
+            if (actionBLL.deleteAction(actionId) == 0)
+            {
+                Response.Write("<script>alert('Delete successful');</script>");
+                loadData();
+            }
+            else
+            {
+                Response.Write("<script>alert('Delete fail. This action is contraint to another table.');</script>");
+            }
         }
     }
 }
