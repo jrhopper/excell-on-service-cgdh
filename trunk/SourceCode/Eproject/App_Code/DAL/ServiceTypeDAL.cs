@@ -126,7 +126,7 @@ public class ServiceTypeDAL:ConfigurationDAL
         openConnect();
 
         String query = "  select id,name,image,charges,description"
-                        + " from servicetype";
+                        + " from servicetype"
                         + " where id = " + id;
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         da.Fill(ds);
