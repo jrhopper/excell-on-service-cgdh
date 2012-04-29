@@ -213,4 +213,17 @@ public class RoleDAL:ConfigurationDAL
         da.Fill(ds);
         return ds;
     }
+    /*
+    *Author:La Quoc Chuong
+    *Purpose: delete role detail by id
+    *Date: 2012/04/17
+    */
+    public void deleteRoleDetail(int roleDetailId)
+    {
+        SqlConnection conn = connectDB();
+        openConnect();
+        SqlCommand cmd = new SqlCommand("delete from roledetail where id = @roledetailid",conn);
+        cmd.Parameters.AddWithValue("@roledetailid",roleDetailId);
+        cmd.ExecuteNonQuery();
+    }
 }

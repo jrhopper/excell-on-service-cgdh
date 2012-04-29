@@ -29,7 +29,7 @@
             EnableModelValidation="True" onrowcommand="gvRoleDetail_RowCommand" PageSize="5">
             <Columns>
                 <asp:BoundField DataField="roledetailid" HeaderText="ID">
-                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" CssClass=left Width="50px" 
+                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="50px" 
                     Height="30px" />
                 </asp:BoundField>
                 <asp:BoundField DataField="rolename" HeaderText="Role">
@@ -61,7 +61,7 @@
     <asp:Button ID="btnViewRoleDetail" style="margin-left:2px" runat="server" Text="Role Detail List" PostBackUrl="~/Admin/RoleDetail.aspx" />
     <asp:Button ID="btnViewAction" style="margin-left:2px" runat="server" Text="Action List" PostBackUrl="~/Admin/Action.aspx" />
     <asp:Button ID="btnViewMenu" style="margin-left:2px" runat="server" Text="Menu List" PostBackUrl="~/Admin/Menu.aspx" />
-    
+     <asp:Button ID="Button1" runat="server" CausesValidation=false PostBackUrl="~/Admin/ManageRole.aspx" Text="Role Management" />
     </ContentTemplate>
     </asp:UpdatePanel>
 

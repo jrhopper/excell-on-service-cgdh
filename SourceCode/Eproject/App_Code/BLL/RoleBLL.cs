@@ -108,4 +108,13 @@ public class RoleBLL
     {
         return roleDAL.getAllRoleDetail();
     }
+    /*
+    *Author:La Quoc Chuong
+    *Purpose: delete role detail by id
+    *Date: 2012/04/17
+    */
+    public void deleteRoleDetail(int roleDetailId)
+    {
+        roleDAL.deleteRoleDetail(roleDetailId);
+    }
 }
