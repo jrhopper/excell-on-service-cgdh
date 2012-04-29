@@ -154,7 +154,7 @@ public class ServiceOrderDAL:ConfigurationDAL
                         + " from serviceorder a inner join servicetype b "
                         + " on a.servicetype = b.id inner join employee c "
                         + " on a.empid = c.id inner join customer d"
-                        + " on a.customer = d.id";
+                        + " on a.customer = d.id"
                         + " where a.id = " + id;
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         da.Fill(ds);

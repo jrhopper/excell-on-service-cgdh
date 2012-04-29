@@ -129,7 +129,7 @@ public class ProductDAL:ConfigurationDAL
 
         String query = "  select a.id,a.name,a.company,a.price,b.name as customer,a.description"
                         + " from product a inner join customer b "
-                        + " on a.customerid = b.id";
+                        + " on a.customerid = b.id"
                         + " where a.id = " + id;
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         da.Fill(ds);
