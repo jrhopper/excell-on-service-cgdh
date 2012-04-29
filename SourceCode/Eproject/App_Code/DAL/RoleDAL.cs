@@ -148,11 +148,12 @@ public class RoleDAL:ConfigurationDAL
         SqlConnection conn = connectDB();
         openConnect();
         
-        String query = "select d.id as [RoleDetailId],d.menuid as MenuId,d.roleid as RoleId,d.actionid as ActionId,d.description as RoleDetailDescription,a.name as ActionName,m.name as MenuName,r.name as RoleName "
-	                                        +" from roledetail d inner join [role] r on d.roleid = r.id "
-	                                        +" inner join menu m on d.menuid = m.id "
-	                                        +" inner join [action] a on d.actionid = a.id "
-                                            + " where d.roleid = "+id;
+        String query = "select d.id as [RoleDetailId],d.menuid as MenuId,d.roleid as RoleId,d.actionid as ActionId,"
+                                    +" d.description as RoleDetailDescription,a.name as ActionName,m.name as MenuName,r.name as RoleName "
+	                                +" from roledetail d inner join [role] r on d.roleid = r.id "
+	                                +" inner join menu m on d.menuid = m.id "
+	                                +" inner join [action] a on d.actionid = a.id "
+                                    + " where d.roleid = "+id;
         SqlDataAdapter da = new SqlDataAdapter(query,conn);
         da.Fill(ds);
         return ds;
@@ -192,5 +193,24 @@ public class RoleDAL:ConfigurationDAL
         cmd.Parameters.AddWithValue("@roleid",roleid);
         cmd.Parameters.AddWithValue("@actionid",actionid);
         cmd.ExecuteNonQuery();
+    }
+
+    /*
+    *Author:La Quoc Chuong
+    *Purpose: getAllRoleDetail
+    *Date: 2012/04/17
+    */
+    public DataSet getAllRoleDetail()
+    {
+        SqlConnection conn = connectDB();
+        openConnect();
+        DataSet ds = new DataSet();
+        SqlDataAdapter da = new SqlDataAdapter("select rd.id as roledetailid,m.name as menuname, r.name as rolename,a.name as actionname "
+                               +" from roledetail rd inner join menu m "
+                               +" on rd.menuid = m.id inner join [role] r "
+                               +" on rd.roleid = r.id inner join [action] a " 
+                               +" on rd.actionid = a.id order by rolename,menuname",conn);
+        da.Fill(ds);
+        return ds;
     }
 }

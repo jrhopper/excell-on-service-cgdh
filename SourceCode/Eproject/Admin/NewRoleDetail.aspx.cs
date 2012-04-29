@@ -31,14 +31,14 @@ public partial class Admin_NewRoleDetail : System.Web.UI.Page
     public void btnAdd_Click(object sender, EventArgs e)
     {
         RoleBLL roleBLL = new RoleBLL();
-        int rs = roleBLL.checkRoleDetail(int.Parse(roleList.SelectedValue), int.Parse(menuList.SelectedValue), int.Parse(actionList.SelectedValue));
+        int rs = roleBLL.checkRoleDetail(int.Parse(menuList.SelectedValue), int.Parse(roleList.SelectedValue), int.Parse(actionList.SelectedValue));
         if (rs == 1)
         {
             Response.Write("<script>alert('Role detail is existed, can not add into table.');</script>");
         }
         else
         {
-            roleBLL.insertRoleDetail(int.Parse(roleList.SelectedValue), int.Parse(menuList.SelectedValue), int.Parse(actionList.SelectedValue));
+            roleBLL.insertRoleDetail(int.Parse(menuList.SelectedValue), int.Parse(roleList.SelectedValue), int.Parse(actionList.SelectedValue));
             Response.Write("<script>alert('Add role detail successful!');window.location='RoleDetail.aspx';</script>");
             
         }

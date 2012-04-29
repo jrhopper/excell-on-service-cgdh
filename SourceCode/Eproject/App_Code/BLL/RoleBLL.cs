@@ -99,4 +99,13 @@ public class RoleBLL
     {
         roleDAL.insertRoleDetail(menuid,roleid,actionid);
     }
+    /*
+    *Author:La Quoc Chuong
+    *Purpose: getAllRoleDetail
+    *Date: 2012/04/17
+    */
+    public DataSet getAllRoleDetail()
+    {
+        return roleDAL.getAllRoleDetail();
+    }
 }
