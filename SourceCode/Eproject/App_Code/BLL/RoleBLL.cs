@@ -81,4 +81,22 @@ public class RoleBLL
     {
         return roleDAL.getAllRoleDetailByRoleId(id);
     }
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: check role detail. check by menuid,roleid,actionid
+     *Date: 2012/04/17
+     */
+    public int checkRoleDetail(int menuId, int roleId, int actionId)
+    {
+        return roleDAL.checkRoleDetail(menuId, roleId, actionId);
+    }
+    /*
+    *Author:La Quoc Chuong
+    *Purpose: insert roledetail menuid,roleid,actionid
+    *Date: 2012/04/17
+    */
+    public void insertRoleDetail(int menuid, int roleid, int actionid)
+    {
+        roleDAL.insertRoleDetail(menuid,roleid,actionid);
+    }
 }

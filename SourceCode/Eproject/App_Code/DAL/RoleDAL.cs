@@ -157,4 +157,40 @@ public class RoleDAL:ConfigurationDAL
         da.Fill(ds);
         return ds;
     }
+    /*
+     *Author:La Quoc Chuong
+     *Purpose: check role detail. check by menuid,roleid,actionid
+     *Date: 2012/04/17
+     */
+    public int checkRoleDetail(int menuId, int roleId, int actionId)
+    {
+        SqlConnection conn = connectDB();
+        openConnect();
+        SqlCommand cmd = new SqlCommand("select count(*) as count from roledetail where menuid = @menuId and roleid = @roleId and actionid = @actionId",conn);
+        cmd.Parameters.AddWithValue("@menuId",menuId);
+        cmd.Parameters.AddWithValue("@roleId",roleId);
+        cmd.Parameters.AddWithValue("@actionid",actionId);
+        SqlDataReader reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            if (int.Parse(reader["count"].ToString()) > 0)
+                return 1;
+        }
+        return 0;
+    }
+    /*
+    *Author:La Quoc Chuong
+    *Purpose: insert roledetail menuid,roleid,actionid
+    *Date: 2012/04/17
+    */
+    public void insertRoleDetail(int menuid,int roleid,int actionid)
+    {
+        SqlConnection conn = connectDB();
+        openConnect();
+        SqlCommand cmd = new SqlCommand("insert into roledetail (menuid,roleid,actionid) values (@menuid,@roleid,@actionid)",conn);
+        cmd.Parameters.AddWithValue("@menuid",menuid);
+        cmd.Parameters.AddWithValue("@roleid",roleid);
+        cmd.Parameters.AddWithValue("@actionid",actionid);
+        cmd.ExecuteNonQuery();
+    }
 }
