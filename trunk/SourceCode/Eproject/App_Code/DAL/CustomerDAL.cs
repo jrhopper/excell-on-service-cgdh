@@ -2,25 +2,40 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebApplication1.Entities;
-using System.Collections;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 /// <summary>
 /// Summary description for EmployeeDAL
 /// </summary>
-public class CustomerDAL:ConfigurationDAL
+public class CustomerDAL : ConfigurationDAL
 {
     public CustomerDAL()
-	{
-    
+    {
+        //
+        // TODO: Add constructor logic here
+        //
     }
 
     /*
-     * Author:Nguyen Kim Hoang
-     * Purpose: get all Customer
-     * Date:2012/04/18
+     *Author:Huynh Trong Gia
+     *Purpose: get all customer 
+     *Date: 2012/04/27
+     */
+    public DataSet getAllCustomer()
+    {
+        DataSet ds = new DataSet();
+        SqlConnection conn = connectDB();
+        openConnect();
+        SqlDataAdapter da = new SqlDataAdapter("select * from customer", conn);
+        da.Fill(ds);
+        return ds;
+    }
+
+    /*
+     *Author:Huynh Trong Gia
+     *Purpose: delete customer. use method CheckCustomer to check exists customer
+     *Date: 2012/04/27
      */
     public int deleteCustomer(int id)
     {
@@ -39,7 +54,11 @@ public class CustomerDAL:ConfigurationDAL
             return 1;
         }
     }
-
+    /*
+     *Author:Huynh Trong Gia
+     *Purpose: check customer exists in other table. 0:not exists, 1:exists
+     *Date: 2012/04/27
+     */
     public Boolean checkCustomer(int id)
     {
         SqlConnection conn = connectDB();
@@ -55,7 +74,11 @@ public class CustomerDAL:ConfigurationDAL
             return true;
         return false;
     }
-
+    /*
+     *Author:Huynh Trong Gia
+     *Purpose: update customer
+     *Date: 2012/04/27
+     */
     public void updateCustomer(int id, String name, String address, String phone, String email, String contact, String company)
     {
         DataSet ds = new DataSet();
@@ -71,6 +94,11 @@ public class CustomerDAL:ConfigurationDAL
         cmd.Parameters.AddWithValue("@company", company);
         cmd.ExecuteNonQuery();
     }
+    /*
+     *Author:Huynh Trong Gia
+     *Purpose: get customer by id
+     *Date: 2012/04/27
+     */
     public DataSet getCustomerById(int id)
     {
         SqlConnection conn = connectDB();
@@ -80,8 +108,12 @@ public class CustomerDAL:ConfigurationDAL
         da.Fill(ds);
         return ds;
     }
-
-    public int checkCustomerNameByName(String name)
+    /*
+     *Author:Huynh Trong Gia
+     *Purpose: check customer name is exists. if exists return 1,return 0.
+     *Date: 2012/04/27
+     */
+    public int CheckCustomerNameByName(String name)
     {
         SqlConnection conn = connectDB();
         openConnect();
@@ -94,7 +126,11 @@ public class CustomerDAL:ConfigurationDAL
         }
         return 0;
     }
-
+    /*
+     *Author:Huynh Trong Gia
+     *Purpose: insert new customer
+     *Date: 2012/04/27
+     */
     public int insert(String name, String address, String phone, String email, String contact, String company)
     {
         SqlConnection conn = connectDB();
@@ -109,30 +145,4 @@ public class CustomerDAL:ConfigurationDAL
         return cmd.ExecuteNonQuery();
     }
 
-    public DataSet getAllCustomer()
-    {
-        SqlConnection conn = connectDB();
-        openConnect();
-        String query = "  select id,name,address,phone,email,contact,company"
-                        + " from customer";
-        SqlDataAdapter da = new SqlDataAdapter(query, conn);
-        DataSet ds = new DataSet();
-        da.Fill(ds);
-        return ds;
-    }
-    public DataSet getAllCustomerDetailByCustomerId(int id)
-    {
-        DataSet ds = new DataSet();
-
-        SqlConnection conn = connectDB();
-        openConnect();
-
-        String query = "  select id,name,address,phone,email,contact,company"
-                        + " from customer"
-                        + " where id = " +id;
-        SqlDataAdapter da = new SqlDataAdapter(query, conn);
-        da.Fill(ds);
-        return ds;
-    }
-    
 }
