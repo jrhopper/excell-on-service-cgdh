@@ -9,6 +9,7 @@ public partial class Admin_ManageProduct : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!this.IsPostBack)
         loadData();
     }
     public void loadData()
@@ -25,8 +26,38 @@ public partial class Admin_ManageProduct : System.Web.UI.Page
     {
 
     }
+
+    protected void gvProduct_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        //Response.Write("<b style='color:white'>"+gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[1].Text+"</b><br />");
+        if (e.CommandName == "updateProduct")
+        {
+            //Response.Write("<b style='color:white'>update</b>");
+            Response.Redirect("FormUpdateProduct.aspx?id=" + int.Parse(gvProduct.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text)); //int.Parse(gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text);
+        }
+        if (e.CommandName == "deleteProduct")
+        {
+            //Response.Write("<b style='color:white'>delete</b>");
+            ProductBLL productBLL = new ProductBLL();
+            //Response.Write("<b style='color:white'>"+CustomerBLL.deletecustomer(int.Parse(gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text))+"</b>");
+            if (productBLL.deleteProduct(int.Parse(gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text)) == 0)
+            {
+                Response.Write("<script>alert('Delete is successful.');</script>");
+                loadData();
+            }
+            else
+            {
+                Response.Write("<script>alert('Delete fail. This product is contraint to another table.');</script>");
+            }
+        }
+    }
+
     protected void gvSProduct_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
         Response.Write("<script>alert('" + e.RowIndex + "');</script>");
+    }
+    public void btnCreateNew_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("FormCreateProduct.aspx");
     }
 }
