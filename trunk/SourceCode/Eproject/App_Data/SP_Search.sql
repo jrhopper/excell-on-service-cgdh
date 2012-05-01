@@ -103,7 +103,7 @@ begin
 	end
 	if(@customeraddress != 'null')
 	begin
-		set @str = @str + ' and cus.address = '+@customeraddress+' '
+		set @str = @str + ' and cus.address = '''+@customeraddress+''' '
 	end
 
 	if(@customerphone = 'null')
@@ -112,7 +112,7 @@ begin
 	end
 	if(@customerphone != 'null')
 	begin
-		set @str = @str + ' and cus.phone = '+@customerphone+' '
+		set @str = @str + ' and cus.phone = '''+@customerphone+''' '
 	end
 
 	if(@customeremail = 'null')
@@ -121,7 +121,7 @@ begin
 	end
 	if(@customeremail != 'null')
 	begin
-		set @str = @str + ' and cus.email = '+@customeremail+' '
+		set @str = @str + ' and cus.email = '''+@customeremail+''' '
 	end
 
 	--select @str
@@ -132,7 +132,7 @@ end
 /*
 
 exec sp_search 'null','null','null','null','2012-01-24','null','1','null','null','null'
-exec sp_search 'null','null','null','null','null','null','null','null','null','null'
+exec sp_search 'null','null','null','null','null','null','null','null','null','michael@gmail.com'
 
 --test1
 DECLARE @strVar VARCHAR(200)
