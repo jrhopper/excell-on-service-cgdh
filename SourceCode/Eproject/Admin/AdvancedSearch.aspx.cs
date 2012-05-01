@@ -25,6 +25,7 @@ public partial class Admin_AdvancedSearch : System.Web.UI.Page
         
     }
 
+
     public void btnReset_Click(object sender, EventArgs e)
     {
         txtServiceOrderName.Text = "";
