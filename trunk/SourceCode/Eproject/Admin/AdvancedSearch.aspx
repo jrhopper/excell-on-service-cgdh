@@ -1,9 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="AdvancedSearch.aspx.cs" Inherits="Admin_AdvancedSearch" %>
 
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+    Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<style>
+    <style>
 .left{padding-left:20px;}
 </style>
     
@@ -100,6 +103,7 @@
                 <asp:TableCell>                       
                     <asp:Button ID="btnSearch" UseSubmitBehavior=false OnClick="btnSearch_Click" runat="server" Text="Search" />
                     <asp:Button ID="btnReset" UseSubmitBehavior=false OnClick="btnReset_Click" runat="server" Text="Reset" style="margin-left:10px" />
+                    
                 </asp:TableCell>
                 <asp:TableCell>
                     
