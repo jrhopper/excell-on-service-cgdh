@@ -42,8 +42,7 @@
             <td style="width: 327px">
       <textarea name="txtDescription" id="txtDescription" cols="45" rows="5"></textarea></td>
             <td>
-                <asp:RequiredFieldValidator ControlToValidate="txtDescription" Display="Dynamic" ID="RequiredFieldValidator" runat="server" ErrorMessage="Description is null"></asp:RequiredFieldValidator>
-            </td>
+                &nbsp;</td>
         </tr>
 		
         <tr>

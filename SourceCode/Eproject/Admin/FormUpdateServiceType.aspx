@@ -1,15 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="FormCreateProduct.aspx.cs" Inherits="Admin_FormCreateProduct" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="FormUpdateServiceType.aspx.cs" Inherits="Admin_FormUpdateServiceType" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <table cellpadding="5" cellspacing="0" border="1px" style="margin:10px auto; width: 500px;">
         <tr>
             <td colspan="3" style="background: #CCC; text-align:center; font-size: 15pt; font-weight: bold;">
-                Add new Product</td>
+                Update Service type</td>
         </tr>
         <tr>
             <td>Id</td>
-            <td><input name="txtId" id="txtId" readonly="readonly" type="text" runat="server" /></td>
+            <td style="width: 327px"><input name="txtId" id="txtId" readonly="readonly" type="text" runat="server" /></td>
             <td></td>
         </tr>
         <tr>
@@ -22,29 +22,25 @@
             </td>
         </tr>
 		<tr>
-            <td>Company</td>
-            <td><input name="txtCompany" id="txtCompany" type="text" runat="server" /></td>
-            <td>
-                &nbsp;</td>
-        </tr>
-		<tr>
-            <td>Price</td>
-            <td><input name="txtPrice" id="txtPrice" type="text" runat="server" /></td>
-            <td>
-                &nbsp;</td>
-        </tr>
-		<tr>
-            <td>Customer</td>
-            <td>
-                <asp:DropDownList ID="ddlCustomer" runat="server">
-                </asp:DropDownList>
+            <td>Image</td>
+            <td style="width: 327px">
+                <asp:FileUpload ID="fuImage" runat="server" />
             </td>
+            <td>
+                
+            </td>
+        </tr>
+		<tr>
+            <td>Charges</td>
+            <td style="width: 327px">
+                <input name="txtCharges" id="txtCharges" type="text" 
+                    runat="server" /></td>
             <td>
                 &nbsp;</td>
         </tr>
 		<tr>
             <td>Description</td>
-            <td>
+            <td style="width: 327px">
       <textarea name="txtDescription" id="txtDescription" cols="45" rows="5"></textarea></td>
             <td>
                 &nbsp;</td>
@@ -54,8 +50,8 @@
             <td colspan="3" align="center">
             
                  
-                <asp:Button ID="btnCreate" runat="server" Text="Create" 
-                    onclick="btnCreate_Click" />
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" 
+                    onclick="btnUpdate_Click" />
             </td>
             
         </tr>
