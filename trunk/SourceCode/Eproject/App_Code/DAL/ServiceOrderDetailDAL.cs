@@ -57,15 +57,16 @@ public class ServiceOrderDetailDAL:ConfigurationDAL
         return false;
     }
 
-    public void updateServiceOrderDetail(int id, String serviceorderid, String empid, String taskname, String description)
+    public void updateServiceOrderDetail(int id, String serviceorderid, String empid, String servicetype, String taskname, String description)
     {
         DataSet ds = new DataSet();
         SqlConnection conn = connectDB();
         openConnect();
-        SqlCommand cmd = new SqlCommand("exec SP_UpdateServiceOrderDetail @id,@serviceorderid,@empid,@taskname,@description", conn);
+        SqlCommand cmd = new SqlCommand("exec SP_UpdateServiceOrderDetail @id,@serviceorderid,@empid,@servicetype,@taskname,@description", conn);
         cmd.Parameters.AddWithValue("@id", id);
         cmd.Parameters.AddWithValue("@serviceorderid", serviceorderid);
         cmd.Parameters.AddWithValue("@empid", empid);
+        cmd.Parameters.AddWithValue("@servicetype", servicetype);
         cmd.Parameters.AddWithValue("@taskname", taskname);
         cmd.Parameters.AddWithValue("@description", description);
         cmd.ExecuteNonQuery();
@@ -94,13 +95,14 @@ public class ServiceOrderDetailDAL:ConfigurationDAL
         return 0;
     }
 
-    public int insert(String serviceorderid, String empid, String taskname, String description)
+    public int insert(String serviceorderid, String empid, String servicetype, String taskname, String description)
     {
         SqlConnection conn = connectDB();
         openConnect();
-        SqlCommand cmd = new SqlCommand("insert into ServiceOrderDetail (serviceorderid,empid,taskname,description) values (@serviceorderid,@empid,@taskname,@description) ", conn);
+        SqlCommand cmd = new SqlCommand("insert into ServiceOrderDetail (serviceorderid,empid,servicetype,taskname,description) values (@serviceorderid,@empid,@servicetype,@taskname,@description) ", conn);
         cmd.Parameters.AddWithValue("@serviceorderid", serviceorderid);
         cmd.Parameters.AddWithValue("@empid", empid);
+        cmd.Parameters.AddWithValue("@servicetype", servicetype);
         cmd.Parameters.AddWithValue("@taskname", taskname);
         cmd.Parameters.AddWithValue("@description", description);
         return cmd.ExecuteNonQuery();
@@ -110,10 +112,11 @@ public class ServiceOrderDetailDAL:ConfigurationDAL
     {
         SqlConnection conn = connectDB();
         openConnect();
-        String query = "  select a.id as id,b.name as serviceorder,c.name as employee,a.taskname,a.description"
+        String query = "  select a.id as id,b.name as serviceorder,c.name as employee,d.name as servicetype,a.taskname,a.description"
                         + " from serviceorderdetail a inner join serviceorder b "
                         + " on a.serviceorderid = b.id inner join employee c "
-                        + " on a.empid = c.id";
+                        + " on a.empid = c.id inner join servicetype d"
+                        + " on a.servicetype = d.id";
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         DataSet ds = new DataSet();
         da.Fill(ds);
@@ -127,10 +130,11 @@ public class ServiceOrderDetailDAL:ConfigurationDAL
         SqlConnection conn = connectDB();
         openConnect();
 
-        String query = "  select a.id as id,b.name as serviceorder,c.name as employee,a.taskname,a.description"
+        String query = "  select a.id as id,b.name as serviceorder,c.name as employee,d.name as servicetype,a.taskname,a.description"
                         + " from serviceorderdetail a inner join serviceorder b "
                         + " on a.serviceorderid = b.id inner join employee c "
-                        + " on a.empid = c.id"
+                        + " on a.empid = c.id inner join servicetype d"
+                        + " on a.servicetype = d.id"
                         + " where a.id = " + id;
         SqlDataAdapter da = new SqlDataAdapter(query, conn);
         da.Fill(ds);

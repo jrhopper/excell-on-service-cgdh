@@ -24,9 +24,9 @@ public class ServiceOrderDetailBLL
         return serviceorderdetailDAL.deleteServiceOrderDetail(id);
     }
 
-    public void updateServiceOrderDetail(int id, String serviceorderid, String empid, String taskname, String description)
+    public void updateServiceOrderDetail(int id, String serviceorderid, String empid, String servicetype, String taskname, String description)
     {
-        serviceorderdetailDAL.updateServiceOrderDetail(id, serviceorderid, empid, taskname, description);
+        serviceorderdetailDAL.updateServiceOrderDetail(id, serviceorderid, empid,servicetype, taskname, description);
     }
 
     public DataSet getServiceOrderDetailById(int id)
@@ -39,9 +39,9 @@ public class ServiceOrderDetailBLL
         return serviceorderdetailDAL.checkServiceOrderDetailNameByName(name);
     }
 
-    public int insert(String serviceorderid, String empid, String taskname, String description)
+    public int insert(String serviceorderid, String empid,String servicetype,String servicetype, String taskname, String description)
     {
-        return serviceorderdetailDAL.insert(serviceorderid, empid, taskname, description);
+        return serviceorderdetailDAL.insert(serviceorderid, empid,servicetype, taskname, description);
     }
 
     public DataSet getAllServiceOrderDetail()
