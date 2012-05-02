@@ -1,10 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="FormCreateServiceOrder.aspx.cs" Inherits="Admin_FormCreateServiceOrder" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="FormUpdateServiceOrder.aspx.cs" Inherits="Admin_FormUpdateServiceOrder" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <table cellpadding="5" cellspacing="0" border="1px" style="margin:10px auto; width: 500px;">
         <tr>
-            <td colspan="3" style="background: #CCC; text-align:center; font-size: 15pt; font-weight: bold;">Add new Service order</td>
+            <td colspan="3" style="background: #CCC; text-align:center; font-size: 15pt; font-weight: bold;">
+                Update Service order</td>
         </tr>
         <tr>
             <td>Id</td>
@@ -108,8 +109,8 @@
             <td colspan="3" align="center">
             
                  
-                <asp:Button ID="btnCreate" runat="server" Text="Create" 
-                    onclick="btnCreate_Click" />
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" 
+                    onclick="btnUpdate_Click" />
             </td>
             
         </tr>
