@@ -21,7 +21,7 @@ public partial class Admin_FormCreateOrderDetail : System.Web.UI.Page
         else if (serviceOrderDetailBLL.checkServiceOrderDetailNameByName(txtTaskname.Value) == 0)
         {
             lbMessage.Text = "";
-            if (serviceOrderDetailBLL.insert(ddlServiceOrder.Value, ddlEmployee.Value, txtTaskname.Value, txtDescription.Value) != -1)
+            if (serviceOrderDetailBLL.insert(ddlServiceOrder.Value, ddlEmployee.Value, dllServiceType.Value, txtTaskname.Value, txtDescription.Value) != -1)
             {
                 Response.Write("<script>alert('Create Service Order Detail Successful.');window.location='ManageOrderDetail.aspx';</script>");
             }

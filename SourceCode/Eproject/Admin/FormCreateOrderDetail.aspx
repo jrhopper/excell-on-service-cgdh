@@ -31,6 +31,16 @@
                 
             </td>
         </tr>
+        <tr>
+            <td>Service Type</td>
+            <td style="width: 327px">
+                <asp:DropDownList ID="dllServiceType" runat="server">
+                </asp:DropDownList>
+            </td>
+            <td>
+                
+            </td>
+        </tr>
 		<tr>
             <td>Task name</td>
             <td style="width: 327px"><input name="txtTaskname" id="txtTaskname" type="text" 

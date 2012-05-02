@@ -17,6 +17,7 @@ public partial class Admin_FormUpdateOrderDetail : System.Web.UI.Page
             txtId.Value = id.ToString();
             ddlServiceOrder.Value = ds.Tables[0].Rows[0]["serviceorderid"].ToString();
             ddlEmployee.Value = ds.Tables[0].Rows[0]["empid"].ToString();
+            dllServiceType.Value = ds.Tables[0].Rows[0]["servicetype"].ToString();
             txtTaskname.Value = ds.Tables[0].Rows[0]["taskname"].ToString();
             txtDescription.Value = ds.Tables[0].Rows[0]["description"].ToString();
         }
@@ -24,7 +25,7 @@ public partial class Admin_FormUpdateOrderDetail : System.Web.UI.Page
     public void btnUpdate_Click(object sender, EventArgs e)
     {
         ServiceOrderDetailBLL sodBLL = new ServiceOrderDetailBLL();
-        sodBLL.updateServiceOrderDetail(int.Parse(txtId.Value), ddlServiceOrder.Value, ddlEmployee.Value, txtTaskname.Value, txtDescription.Value);
+        sodBLL.updateServiceOrderDetail(int.Parse(txtId.Value), ddlServiceOrder.Value, ddlEmployee.Value,dllServiceType.Value, txtTaskname.Value, txtDescription.Value);
         Response.Write("<script>alert('Update Successful!');window.location='ManageOrderDetail.aspx';</script>");
     }
 }

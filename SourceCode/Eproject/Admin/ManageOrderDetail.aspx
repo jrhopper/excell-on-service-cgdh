@@ -26,6 +26,8 @@
             <asp:BoundField DataField="employee" HeaderText="Employee">
             <ItemStyle Width="80px" />
             </asp:BoundField>
+            <asp:BoundField DataField="servicetype" HeaderText="Service Type">
+            </asp:BoundField>
             <asp:BoundField DataField="taskname" HeaderText="Task name">
             <ItemStyle Width="150px" />
             </asp:BoundField>
