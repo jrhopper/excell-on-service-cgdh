@@ -10,37 +10,26 @@ public partial class Admin_ManageProduct : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!this.IsPostBack)
-        loadData();
+            loadData();
     }
+
     public void loadData()
     {
-        ConfigurationDAL c = new ConfigurationDAL();
-        c.connectDB();
-        c.openConnect();
-        ProductBLL proBLL = new ProductBLL();
-        gvProduct.DataSource = proBLL.getAllProduct();
+        ProductBLL product = new ProductBLL();
+        gvProduct.DataSource = product.getAllProduct();
         gvProduct.DataBind();
-        c.closeConnect();
-    }
-    protected void gvProduct_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
     }
 
     protected void gvProduct_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        //Response.Write("<b style='color:white'>"+gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[1].Text+"</b><br />");
         if (e.CommandName == "updateProduct")
         {
-            //Response.Write("<b style='color:white'>update</b>");
-            Response.Redirect("FormUpdateProduct.aspx?id=" + int.Parse(gvProduct.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text)); //int.Parse(gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text);
+            Response.Redirect("FormUpdateProduct.aspx?id=" + int.Parse(gvProduct.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text));
         }
         if (e.CommandName == "deleteProduct")
         {
-            //Response.Write("<b style='color:white'>delete</b>");
-            ProductBLL productBLL = new ProductBLL();
-            //Response.Write("<b style='color:white'>"+CustomerBLL.deletecustomer(int.Parse(gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text))+"</b>");
-            if (productBLL.deleteProduct(int.Parse(gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text)) == 0)
+            ProductBLL ProductBLL = new ProductBLL();
+            if (ProductBLL.deleteProduct(int.Parse(gvProduct.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text)) == 0)
             {
                 Response.Write("<script>alert('Delete is successful.');</script>");
                 loadData();
@@ -52,10 +41,6 @@ public partial class Admin_ManageProduct : System.Web.UI.Page
         }
     }
 
-    protected void gvSProduct_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    {
-        Response.Write("<script>alert('" + e.RowIndex + "');</script>");
-    }
     public void btnCreateNew_Click(object sender, EventArgs e)
     {
         Response.Redirect("FormCreateProduct.aspx");
