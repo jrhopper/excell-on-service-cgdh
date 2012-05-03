@@ -23,6 +23,7 @@ insert into action (name,link) values ('Manage Role Detail','ManageRoleDetail.as
 insert into action (name,link) values ('Manage Action','Action.aspx')
 insert into action (name,link) values ('Manage Role','ManageRole.aspx')
 insert into action (name,link) values ('Advanced Search','AdvancedSearch.aspx')
+insert into action (name,link) values ('View Report','Report.aspx')
 ------------------------------------------------------------------------------------------------
 insert into role (name) values ('Admin')
 insert into role (name) values ('HR manager')
@@ -35,6 +36,7 @@ insert into menu (name,link) values ('Service','ManageServiceOrder.aspx')
 insert into menu (name,link) values ('Department','ManageDepartment.aspx')
 insert into menu (name,link) values ('Search','AdvancedSearch.aspx')
 insert into menu (name,link) values ('Role','ManageRole.aspx')
+insert into menu (name,link) values ('Report','Report.aspx')
 ------------------------------------------------------------------------------------------------
 insert into roledetail (menuid,roleid,actionid) values (0,0,0)
 insert into roledetail (menuid,roleid,actionid) values (1,0,1)
@@ -49,6 +51,7 @@ insert into roledetail (menuid,roleid,actionid) values (5,0,6)
 insert into roledetail (menuid,roleid,actionid) values (5,0,9)
 insert into roledetail (menuid,roleid,actionid) values (5,0,10)
 insert into roledetail (menuid,roleid,actionid) values (5,0,11)
+insert into roledetail (menuid,roleid,actionid) values (6,0,13)
 --end admin
 
 insert into roledetail (menuid,roleid,actionid) values (1,1,1)
@@ -105,9 +108,19 @@ values (0,'Serivce order 1',0,0,'2012-01-24','2012-02-16')
 insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
 values (1,'Serivce order 2',2,1,'2012-03-17','2012-03-29')
 insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
-values (2,'Serivce order 3',3,0,'2012-01-14','2012-02-22')
+values (2,'Serivce order 3',3,0,'2012-01-14','2012-02-25')
 insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
-values (3,'Serivce order 4',5,2,'2012-03-08','2012-03-20')
+values (3,'Serivce order 4',5,2,'2012-03-08','2012-03-30')
+insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
+values (0,'Serivce order 1',0,0,'2012-01-24','2012-02-16')
+insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
+values (1,'Serivce order 2',2,1,'2012-03-17','2012-03-29')
+insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
+values (2,'Serivce order 3',3,0,'2012-01-14','2012-02-25')
+insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
+values (3,'Serivce order 4',5,2,'2012-03-08','2012-03-30')
+
+
 ------------------------------------------------------------------------------------------------
 insert into serviceorderdetail (ServiceOrderId,EmpId,ServiceType,TaskName) values (0,0,0,'cong viec 1')
 insert into serviceorderdetail (ServiceOrderId,EmpId,ServiceType,TaskName) values (0,0,1,'cong viec 2')
@@ -127,16 +140,15 @@ insert into statuspayment (serviceorderid,status,date) values (0,1,'2012-02-16')
 insert into statuspayment (serviceorderid,status,date) values (1,0,'2012-03-30')
 insert into statuspayment (serviceorderid,status,date) values (2,0,'2012-02-25')
 insert into statuspayment (serviceorderid,status,date) values (3,1,'2012-03-20')
-
------------
-create table temp(
-serviceorderid varchar(100) primary key,
-serviceordername varchar(100),
-employeeid varchar(100),
-employeename varchar(100),
-customerid varchar(100),
-customername varchar(100),
-charges varchar(100),
-begindate varchar(100),
-enddate varchar(100)
-)
+insert into statuspayment (serviceorderid,status,date) values (0,1,'2012-02-16')
+insert into statuspayment (serviceorderid,status,date) values (1,0,'2012-03-30')
+insert into statuspayment (serviceorderid,status,date) values (2,0,'2012-02-25')
+insert into statuspayment (serviceorderid,status,date) values (3,1,'2012-03-20')
+insert into statuspayment (serviceorderid,status,date) values (0,1,'2012-02-16')
+insert into statuspayment (serviceorderid,status,date) values (1,0,'2012-03-30')
+insert into statuspayment (serviceorderid,status,date) values (2,0,'2012-02-25')
+insert into statuspayment (serviceorderid,status,date) values (3,1,'2012-03-20')
+insert into statuspayment (serviceorderid,status,date) values (0,1,'2012-02-16')
+insert into statuspayment (serviceorderid,status,date) values (1,0,'2012-03-30')
+insert into statuspayment (serviceorderid,status,date) values (2,0,'2012-02-25')
+insert into statuspayment (serviceorderid,status,date) values (3,1,'2012-03-20')
