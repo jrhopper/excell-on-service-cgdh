@@ -3,7 +3,7 @@ begin
 	drop proc SP_UpdateProduct
 end
 go
-create proc SP_UpdateProduct 
+create proc SP_UpdateProduct
 @id int,
 @name nvarchar(100),
 @company nvarchar(200),
@@ -12,5 +12,5 @@ create proc SP_UpdateProduct
 @description nvarchar(200)
 as
 begin
-	update [servicetype] set name = @name, company = @company,price = @price,customerid=@customerid,description=@description where id = @id
+	update [product] set [name] = @name, company = @company, price = @price, customerid = @customerid, description = @description where id = @id
 end
