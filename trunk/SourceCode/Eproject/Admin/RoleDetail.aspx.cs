@@ -34,10 +34,10 @@ public partial class Admin_RoleDetail : System.Web.UI.Page
     public void gvRoleDetail_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         int roleDetailId = int.Parse(gvRoleDetail.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text);
-        if (e.CommandName == "update_RoleDetail")
-        {
-            Response.Redirect("UpdateRoleDetail.aspx?id=" + roleDetailId);
-        }
+        //if (e.CommandName == "update_RoleDetail")
+        //{
+        //    Response.Redirect("UpdateRoleDetail.aspx?id=" + roleDetailId);
+        //}
         if (e.CommandName == "delete_RoleDetail")
         {
             RoleBLL roleBLL = new RoleBLL();
