@@ -101,7 +101,7 @@ insert into employee (username,password,department,roleid,name,birthday,sex,addr
 values ('tronggia','012',1,0,'Huynh Trong Gia','1990-09-09',1,'Thanh pho HCM','05151515151','tronggia@gmail.com')
 ------------------------------------------------------------------------------------------------
 insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
-values (0,'Serivce order 1',0,01'2012-01-24','2012-02-16')
+values (0,'Serivce order 1',0,0,'2012-01-24','2012-02-16')
 insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
 values (1,'Serivce order 2',2,1,'2012-03-17','2012-03-29')
 insert into serviceorder (empid,name,customer,ServiceType,begindate,enddate) 
