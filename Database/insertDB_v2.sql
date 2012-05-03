@@ -89,7 +89,7 @@ insert into product (name,company,price,customerid) values ('SamSung Galaxy Wave
 insert into product (name,company,price,customerid) values ('SamSung Galaxy Ave','SamSung',18000000,3)
 ------------------------------------------------------------------------------------------------
 insert into employee (username,password,department,roleid,name,birthday,sex,address,phone,email) 
-values ('qchuong100','123',2,1,'Quoc Chuong','1990-09-09',1,'Thanh pho HCM','0907226148','qchuong100@gmail.com')
+values ('qchuong100','123',2,0,'Quoc Chuong','1990-09-09',1,'Thanh pho HCM','0907226148','qchuong100@gmail.com')
 
 insert into employee (username,password,department,roleid,name,birthday,sex,address,phone,email) 
 values ('hoang89','456',4,1,'Nguyen Kim Hoang','1989-10-24',1,'Thanh pho HCM','01692199954','hoangnk.hv@gmail.com')
@@ -98,7 +98,7 @@ insert into employee (username,password,department,roleid,name,birthday,sex,addr
 values ('anhdai','789',3,2,'Le Anh Dai','1990-09-09',1,'Thanh pho HCM','0000005555','daile1503@gmail.com')
 
 insert into employee (username,password,department,roleid,name,birthday,sex,address,phone,email) 
-values ('tronggia','012',1,1,'Huynh Trong Gia','1990-09-09',1,'Thanh pho HCM','05151515151','tronggia@gmail.com')
+values ('tronggia','012',1,0,'Huynh Trong Gia','1990-09-09',1,'Thanh pho HCM','05151515151','tronggia@gmail.com')
 ------------------------------------------------------------------------------------------------
 insert into serviceorder (empid,name,customer,begindate,enddate) 
 values (0,'Serivce order 1',0,'2012-01-24','2012-02-16')
