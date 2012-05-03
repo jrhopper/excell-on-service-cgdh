@@ -127,3 +127,16 @@ insert into statuspayment (serviceorderid,status,date) values (0,1,'2012-02-16')
 insert into statuspayment (serviceorderid,status,date) values (1,0,'2012-03-30')
 insert into statuspayment (serviceorderid,status,date) values (2,0,'2012-02-25')
 insert into statuspayment (serviceorderid,status,date) values (3,1,'2012-03-20')
+
+-----------
+create table temp(
+serviceorderid varchar(100) primary key,
+serviceordername varchar(100),
+employeeid varchar(100),
+employeename varchar(100),
+customerid varchar(100),
+customername varchar(100),
+charges varchar(100),
+begindate varchar(100),
+enddate varchar(100)
+)
