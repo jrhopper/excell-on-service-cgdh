@@ -6,6 +6,8 @@ using WebApplication1.Entities;
 using System.Collections;
 using System.Data.SqlClient;
 using System.Data;
+using System.Text;
+using System.Security.Cryptography;
 
 /// <summary>
 /// Summary description for EmployeeDAL
@@ -36,6 +38,27 @@ public class EmployeeDAL : ConfigurationDAL
             count = (int)reader["count"];
         closeConnect();
         return count;
+    }
+    /*
+    * Author:la quoc chuong
+    * Purpose: GetMd5Hash
+    * Date:2012/04/27
+    */
+    public string GetMd5Hash(MD5 md5Hash, string input)
+    {
+
+        
+        byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+        
+        StringBuilder sBuilder = new StringBuilder();
+
+        for (int i = 0; i < data.Length; i++)
+        {
+            sBuilder.Append(data[i].ToString("x2"));
+        }
+
+        return sBuilder.ToString();
     }
 
     /*
