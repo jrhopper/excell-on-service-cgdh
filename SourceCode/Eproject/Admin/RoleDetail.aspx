@@ -41,10 +41,10 @@
                 <asp:BoundField DataField="actionname" HeaderText="Action">
                 <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" CssClass=left Width="250px" />
                 </asp:BoundField>
-                <asp:ButtonField ButtonType="Image" CommandName="update_RoleDetail" 
+                <%--<asp:ButtonField ButtonType="Image" CommandName="update_RoleDetail" 
                     ImageUrl="~/images/edit_icon.png">
                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="30px" />
-                </asp:ButtonField>
+                </asp:ButtonField>--%>
                 <asp:ButtonField ButtonType="Image" CommandName="delete_RoleDetail" 
                     ImageUrl="~/images/delete_icon.png">
                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="30px" />
