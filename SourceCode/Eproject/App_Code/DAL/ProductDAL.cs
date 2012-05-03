@@ -55,6 +55,8 @@ public class ProductDAL : ConfigurationDAL
             return 1;
         }
     }
+
+
     /*
      *Author:Huynh Trong Gia
      *Purpose: check product exists in other table. 0:not exists, 1:exists
@@ -80,7 +82,7 @@ public class ProductDAL : ConfigurationDAL
      *Purpose: update product
      *Date: 2012/04/27
      */
-    public void updateProduct(int id, String name, String company, String price, String customerid, String description)
+    public void updateProduct(int id, String name, String company, int price, int ddlCustomer, String description)
     {
         DataSet ds = new DataSet();
         SqlConnection conn = connectDB();
@@ -90,7 +92,7 @@ public class ProductDAL : ConfigurationDAL
         cmd.Parameters.AddWithValue("@name", name);
         cmd.Parameters.AddWithValue("@company", company);
         cmd.Parameters.AddWithValue("@price", price);
-        cmd.Parameters.AddWithValue("@customerid", customerid);
+        cmd.Parameters.AddWithValue("@customerid", ddlCustomer);
         cmd.Parameters.AddWithValue("@description", description);
         cmd.ExecuteNonQuery();
     }
@@ -131,17 +133,40 @@ public class ProductDAL : ConfigurationDAL
      *Purpose: insert new product
      *Date: 2012/04/27
      */
-    public int insert(String name, String company, String price, String customerid, String description)
+    public int insert(String name, String company, int price, int ddlCustomer, String description)
     {
         SqlConnection conn = connectDB();
         openConnect();
-        SqlCommand cmd = new SqlCommand("insert into product (name,company,price,customerid,description) values (@name,@company,@price,@customerid,@description) ", conn);
+        SqlCommand cmd = new SqlCommand("insert into product (name,company,price,ddlCustomer,description) values (@name,@company,@price,@customerid,@description) ", conn);
         cmd.Parameters.AddWithValue("@name", name);
         cmd.Parameters.AddWithValue("@company", company);
         cmd.Parameters.AddWithValue("@price", price);
-        cmd.Parameters.AddWithValue("@customerid", customerid);
+        cmd.Parameters.AddWithValue("@customerid", ddlCustomer);
         cmd.Parameters.AddWithValue("@description", description);
         return cmd.ExecuteNonQuery();
     }
+
+
+    //internal static object getAllCustomerName()
+    //{
+    //    throw new NotImplementedException();
+    //}
+
+    /*
+     *Author:Huynh Trong Gia
+     *Purpose:get all customername
+     *Date:2012/04/17
+     */
+
+    public DataSet getAllCustomerName()
+    {
+        DataSet ds = new DataSet();
+        SqlConnection conn = connectDB();
+        openConnect();
+        SqlDataAdapter da = new SqlDataAdapter("select name from customer", conn);
+        da.Fill(ds);
+        return ds;
+    }
+
 
 }
