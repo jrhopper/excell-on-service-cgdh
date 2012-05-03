@@ -39,7 +39,7 @@ public class ServiceOrderDetailBLL
         return serviceorderdetailDAL.checkServiceOrderDetailNameByName(name);
     }
 
-    public int insert(String serviceorderid, String empid,String servicetype,String servicetype, String taskname, String description)
+    public int insert(String serviceorderid, String empid,String servicetype, String taskname, String description)
     {
         return serviceorderdetailDAL.insert(serviceorderid, empid,servicetype, taskname, description);
     }
