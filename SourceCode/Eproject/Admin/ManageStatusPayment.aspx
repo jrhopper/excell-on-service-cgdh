@@ -16,7 +16,7 @@
         AutoGenerateColumns="False" 
         onselectedindexchanged="gvStatusPayment_SelectedIndexChanged" 
     BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" 
-    CellPadding="4" CellSpacing="2" ForeColor="Black">
+    CellPadding="4" CellSpacing="2" ForeColor="Black" OnRowCommand="gvStatusPayment_RowCommand">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="ID">
             <ItemStyle Width="100px" />
@@ -30,11 +30,11 @@
             </asp:BoundField>
             <asp:BoundField DataField="description" HeaderText="Description">
             </asp:BoundField>
-            <asp:ButtonField CommandName="updateDepartment" ButtonType="Image" 
+            <asp:ButtonField CommandName="updateStatusPayment" ButtonType="Image" 
                     ImageUrl="~/images/edit_icon.png" >
                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="30px" />
                 </asp:ButtonField>
-                <asp:ButtonField CommandName="deleteDepartment" ButtonType="Image" 
+                <asp:ButtonField CommandName="deleteStatusPayment" ButtonType="Image" 
                     ImageUrl="~/images/delete_icon.png" >
                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="30px" />
                 </asp:ButtonField>

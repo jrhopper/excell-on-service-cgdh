@@ -23,7 +23,7 @@ public class StatusPaymentBLL
         return statuspaymentDAL.deleteStatusPayment(id);
     }
 
-    public void updateStatusPayment(int id, String serviceorderid, String status, String date, String description)
+    public void updateStatusPayment(int id, int serviceorderid, int status, String date, String description)
     {
         statuspaymentDAL.updateStatusPayment(id, serviceorderid, status, date, description);
     }
@@ -38,7 +38,7 @@ public class StatusPaymentBLL
         return statuspaymentDAL.checkStatusPaymentNameByName(name);
     }
 
-    public int insert(String serviceorderid, String status, String date, String description)
+    public int insert(int serviceorderid, int status, String date, String description)
     {
         return statuspaymentDAL.insert(serviceorderid, status, date, description);
     }

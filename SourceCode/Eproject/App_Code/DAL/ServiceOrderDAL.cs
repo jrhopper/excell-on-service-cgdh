@@ -57,7 +57,7 @@ public class ServiceOrderDAL:ConfigurationDAL
         return false;
     }
 
-    public void updateServiceOrder(int id, String empid, String name, String customer, String servicetype, String begindate, String enddate, String complete, String description)
+    public void updateServiceOrder(int id, int empid, String name, int customer, int servicetype, String begindate, String enddate, int complete, String description)
     {
         DataSet ds = new DataSet();
         SqlConnection conn = connectDB();
@@ -98,7 +98,7 @@ public class ServiceOrderDAL:ConfigurationDAL
         return 0;
     }
 
-    public int insert(String empid, String name, String customer, String servicetype, String begindate, String enddate, String complete, String description)
+    public int insert(int empid, String name, int customer, int servicetype, String begindate, String enddate, int complete, String description)
     {
         SqlConnection conn = connectDB();
         openConnect();

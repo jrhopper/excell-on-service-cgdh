@@ -82,7 +82,7 @@ public class ProductDAL : ConfigurationDAL
      *Purpose: update product
      *Date: 2012/04/27
      */
-    public void updateProduct(int id, String name, String company, int price, int ddlCustomer, String description)
+    public void updateProduct(int id, String name, String company, String price, int ddlCustomer, String description)
     {
         DataSet ds = new DataSet();
         SqlConnection conn = connectDB();
@@ -133,7 +133,7 @@ public class ProductDAL : ConfigurationDAL
      *Purpose: insert new product
      *Date: 2012/04/27
      */
-    public int insert(String name, String company, int price, int ddlCustomer, String description)
+    public int insert(String name, String company, String price, int ddlCustomer, String description)
     {
         SqlConnection conn = connectDB();
         openConnect();
