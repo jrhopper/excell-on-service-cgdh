@@ -38,7 +38,7 @@ public class ProductBLL
      *Purpose: update Product 
      *Date: 2012/04/27
      */
-    public void updateProduct(int id, String name, String company, int price, int ddlCustomer, String description)
+    public void updateProduct(int id, String name, String company, String price, int ddlCustomer, String description)
     {
         productDAL.updateProduct(id, name, company, price, ddlCustomer, description);
     }
@@ -65,9 +65,9 @@ public class ProductBLL
      *Purpose: insert new Product
      *Date: 2012/04/27
      */
-    public int insert(String name, String company, int price, int ddlCustomer, String description)
+    public int insert(String name, String company, String price, int ddlCustomer, String description)
     {
-        return productDAL.insert(name, company, price, ddlCustomer, description);
+        return productDAL.insert(name, company,price, ddlCustomer, description);
     }
 
     public DataSet getAllCustomerName()

@@ -17,13 +17,16 @@ public partial class Admin_ManageServiceOrder : System.Web.UI.Page
 
     public void loadData()
     {
-        ConfigurationDAL c = new ConfigurationDAL();
-        c.connectDB();
-        c.openConnect();
+        //ConfigurationDAL c = new ConfigurationDAL();
+        //c.connectDB();
+        //c.openConnect();
+        //ServiceOrderBLL soBLL = new ServiceOrderBLL();
+        //gvServiceOrder.DataSource = soBLL.getAllServiceOrder();
+        //gvServiceOrder.DataBind();
+        //c.closeConnect();
         ServiceOrderBLL soBLL = new ServiceOrderBLL();
         gvServiceOrder.DataSource = soBLL.getAllServiceOrder();
         gvServiceOrder.DataBind();
-        c.closeConnect();
     }
 
     protected void gvServiceOrder_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,14 +39,13 @@ public partial class Admin_ManageServiceOrder : System.Web.UI.Page
         //Response.Write("<b style='color:white'>"+gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[1].Text+"</b><br />");
         if (e.CommandName == "updateServiceOrder")
         {
-            //Response.Write("<b style='color:white'>update</b>");
-            Response.Redirect("FormUpdateServiceOrder.aspx?id=" + int.Parse(gvServiceOrder.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text)); //int.Parse(gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text);
+            Response.Redirect("FormUpdateServiceOrder.aspx?id=" + int.Parse(gvServiceOrder.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text));
         }
         if (e.CommandName == "deleteServiceOrder")
         {
-            //Response.Write("<b style='color:white'>delete</b>");
+
             ServiceOrderBLL serviceOrderBLL = new ServiceOrderBLL();
-            //Response.Write("<b style='color:white'>"+CustomerBLL.deletecustomer(int.Parse(gvCustomer.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text))+"</b>");
+            
             if (serviceOrderBLL.deleteServiceOrder(int.Parse(gvServiceOrder.Rows[(int.Parse(e.CommandArgument.ToString()))].Cells[0].Text)) == 0)
             {
                 Response.Write("<script>alert('Delete is successful.');</script>");

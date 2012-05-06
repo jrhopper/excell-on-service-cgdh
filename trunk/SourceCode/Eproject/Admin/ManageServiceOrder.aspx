@@ -17,7 +17,7 @@
         onselectedindexchanged="gvServiceOrder_SelectedIndexChanged" 
     BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" 
     CellPadding="4" CellSpacing="2" ForeColor="Black" 
-        onrowdeleting="gvServiceOrder_RowDeleting">
+        onrowdeleting="gvServiceOrder_RowDeleting" OnRowCommand="gvServiceOrder_RowCommand">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="ID"></asp:BoundField>
             <asp:BoundField DataField="serviceorder" HeaderText="Name">
@@ -37,11 +37,11 @@
             <asp:BoundField DataField="complete" HeaderText="Complete"></asp:BoundField>
             <asp:BoundField DataField="description" HeaderText="Description">
             </asp:BoundField>
-            <asp:ButtonField CommandName="updateDepartment" ButtonType="Image" 
+            <asp:ButtonField CommandName="updateServiceOrder" ButtonType="Image" 
                     ImageUrl="~/images/edit_icon.png" >
                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="30px" />
                 </asp:ButtonField>
-                <asp:ButtonField CommandName="deleteDepartment" ButtonType="Image" 
+                <asp:ButtonField CommandName="deleteServiceOrder" ButtonType="Image" 
                     ImageUrl="~/images/delete_icon.png" >
                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="30px" />
                 </asp:ButtonField>

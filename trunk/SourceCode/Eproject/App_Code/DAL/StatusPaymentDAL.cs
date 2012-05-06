@@ -57,7 +57,7 @@ public class StatusPaymentDAL:ConfigurationDAL
         return false;
     }
 
-    public void updateStatusPayment(int id, String serviceorderid, String status, String date, String description)
+    public void updateStatusPayment(int id, int serviceorderid, int status, String date, String description)
     {
         DataSet ds = new DataSet();
         SqlConnection conn = connectDB();
@@ -94,7 +94,7 @@ public class StatusPaymentDAL:ConfigurationDAL
         return 0;
     }
 
-    public int insert(String serviceorderid, String status, String date, String description)
+    public int insert(int serviceorderid, int status, String date, String description)
     {
         SqlConnection conn = connectDB();
         openConnect();
