@@ -9,6 +9,7 @@ using System.Data;
 /// </summary>
 public class ServiceOrderBLL
 {
+    ServiceOrderDAL serviceorderDAL = new ServiceOrderDAL();
     public ServiceOrderBLL()
     {
     }
@@ -17,10 +18,33 @@ public class ServiceOrderBLL
      * Purpose: get all ServiceOrder
      * Date:2012/04/18
      */
+    public int deleteServiceOrder(int id)
+    {
+        return serviceorderDAL.deleteServiceOrder(id);
+    }
+
+    public void updateServiceOrder(int id, int empid, String name, int customer, int servicetype, String begindate, String enddate, int complete, String description)
+    {
+        serviceorderDAL.updateServiceOrder(id, empid, name, customer, servicetype, begindate, enddate, complete, description);
+    }
+
+    public DataSet getServiceOrderById(int id)
+    {
+        return serviceorderDAL.getServiceOrderById(id);
+    }
+
+    public int checkServiceOrderNameByName(String name)
+    {
+        return serviceorderDAL.checkServiceOrderNameByName(name);
+    }
+
+    public int insert(int empid, String name, int customer, int servicetype, String begindate, String enddate, int complete, String description)
+    {
+        return serviceorderDAL.insert(empid, name, customer, servicetype, begindate, enddate, complete, description);
+    }
+
     public DataSet getAllServiceOrder()
     {
-        ServiceOrderDAL soDAL = new ServiceOrderDAL();
-        DataSet ds = soDAL.getAllServiceOrder();
-        return ds;
+        return serviceorderDAL.getAllServiceOrder();
     }
 }
