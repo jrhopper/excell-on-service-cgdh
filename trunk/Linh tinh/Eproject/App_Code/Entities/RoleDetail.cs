@@ -12,6 +12,27 @@ namespace WebApplication1.Entities
         String roleId;
         String actionId;
         String description;
+        String menuName;
+        String roleName;
+        String actionName;
+
+        public String MenuName
+        {
+            get { return menuName; }
+            set { menuName = value; }
+        }
+        public String RoleName
+        {
+            get { return roleName; }
+            set { roleName = value; }
+        }
+        
+
+        public String ActionName
+        {
+            get { return actionName; }
+            set { actionName = value; }
+        }
 
         public String Description
         {

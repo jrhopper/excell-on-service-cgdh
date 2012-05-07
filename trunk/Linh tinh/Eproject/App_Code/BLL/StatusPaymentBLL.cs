@@ -9,6 +9,7 @@ using System.Data;
 /// </summary>
 public class StatusPaymentBLL
 {
+    StatusPaymentDAL statuspaymentDAL = new StatusPaymentDAL();
     public StatusPaymentBLL()
     {
     }
@@ -17,10 +18,33 @@ public class StatusPaymentBLL
      * Purpose: get all status payment
      * Date:2012/04/18
      */
+    public int deleteStatusPayment(int id)
+    {
+        return statuspaymentDAL.deleteStatusPayment(id);
+    }
+
+    public void updateStatusPayment(int id, int serviceorderid, int status, String date, String description)
+    {
+        statuspaymentDAL.updateStatusPayment(id, serviceorderid, status, date, description);
+    }
+
+    public DataSet getStatusPaymentById(int id)
+    {
+        return statuspaymentDAL.getStatusPaymentById(id);
+    }
+
+    public int checkStatusPaymentNameByName(String name)
+    {
+        return statuspaymentDAL.checkStatusPaymentNameByName(name);
+    }
+
+    public int insert(int serviceorderid, int status, String date, String description)
+    {
+        return statuspaymentDAL.insert(serviceorderid, status, date, description);
+    }
+
     public DataSet getAllStatusPayment()
     {
-        StatusPaymentDAL staDAL = new StatusPaymentDAL();
-        DataSet ds = staDAL.getAllStatusPayment();
-        return ds;
+        return statuspaymentDAL.getAllStatusPayment();
     }
 }

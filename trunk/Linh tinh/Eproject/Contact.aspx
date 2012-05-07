@@ -5,7 +5,6 @@
 	<div id="contents">
 		<div class="background">
 			<h3 style="text-align: center;">Aptech - Computer Education</h3>			
-			<li>Email:  tronggia@gmail.com</li>
 			<li>Address:  Nguyen Chi Thanh st, Ho Chi Minh City</li>
 			<li>Phone:  0934 81 31 61</li>
 			<br />

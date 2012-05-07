@@ -9,6 +9,7 @@ using System.Data;
 /// </summary>
 public class ServiceTypeBLL
 {
+    ServiceTypeDAL servicetypeDAL = new ServiceTypeDAL();
     public ServiceTypeBLL()
     {
     }
@@ -17,10 +18,33 @@ public class ServiceTypeBLL
      * Purpose: get all ServiceType
      * Date:2012/04/18
      */
+    public int deleteServiceType(int id)
+    {
+        return servicetypeDAL.deleteServiceType(id);
+    }
+
+    public void updateServiceType(int id, String name, String image, String charges, String description)
+    {
+        servicetypeDAL.updateServiceType(id, name, image, charges, description);
+    }
+
+    public DataSet getServiceTypeById(int id)
+    {
+        return servicetypeDAL.getServiceTypeById(id);
+    }
+
+    public int checkServiceTypeNameByName(String name)
+    {
+        return servicetypeDAL.checkServiceTypeNameByName(name);
+    }
+
+    public int insert(String name, String image, String charges, String description)
+    {
+        return servicetypeDAL.insert(name, image, charges, description);
+    }
+
     public DataSet getAllServiceType()
     {
-        ServiceTypeDAL stDAL = new ServiceTypeDAL();
-        DataSet ds = stDAL.getAllServiceType();
-        return ds;
+        return servicetypeDAL.getAllServiceType();
     }
 }
